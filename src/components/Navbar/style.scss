@@ -1,0 +1,15 @@
+
+@import './../../shared/style/style.scss';
+.header{
+    width: 300px;
+    height: 100%;
+    // background-color:red;
+    background-color: $primary-color;
+}
+nav{
+    display: flexbox;
+
+    width:300;
+    height:300;
+    // background-color: $primary-color;
+}
