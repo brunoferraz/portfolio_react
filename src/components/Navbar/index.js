@@ -48,7 +48,7 @@ const Navbar = ()=>{
                 <img className={"brand"+screenQuery} alt="Meu avatar" src={"./assets/avatar.png"}/>
                 <div class={"title"+screenQuery}>Bruno Ferraz</div>
                 
-                <nav className={"navBar"+screenQuery}>
+                <nav className={"navBar"+screenQuery+barState}>
                     <Link to="/about">About</Link>
                     <Link to="/contact">Portfolio</Link>
                     <Link to="/contact">Contact</Link>
