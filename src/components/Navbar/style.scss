@@ -67,3 +67,19 @@
 ////////////////////////////////////////////////////////////
 // MOBILE
 ////////////////////////////////////////////////////////////
+.burguermenu{
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.burguermenu div{
+    display: block;
+    width: 100%;
+    height: 20%;
+    background-color: #{$baseline_on_primary};
+}
+.burguermenu:hover div{
+    background-color: #{$secondary};
+}
