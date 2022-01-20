@@ -7,6 +7,9 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useMediaQuery } from "react-responsive";
+import MediaQuery from 'react-responsive';
+// import MediaQuery from "react-responsive/dist/Component";
+
 
 const barFolded = " barFolded";
 const barUnfolded = " barUnfolded";
@@ -15,7 +18,18 @@ const Navbar = ()=>{
     const [barState, setBarFoldState] = useState(barFolded); 
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
     let screenQuery = "";
-    if(isTabletOrMobile) screenQuery = " mobile"
+    if(isTabletOrMobile) {
+        screenQuery = " mobile"
+    }
+    // const handleMediaQueryChange = (matches) => {
+    //     // matches will be true or false based on the value for the media query
+    //     console.log(matches);
+    // }
+    window.addEventListener('resize', function() {
+       if(barState===barUnfolded){
+           setBarFoldState(barFolded);
+       }
+    });   
 
     // const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)'})
     // const isBigScreen = useMediaQuery({ query: '(min-width: 1824px)' })
@@ -29,9 +43,6 @@ const Navbar = ()=>{
             setBarFoldState(barUnfolded);
         }
     }
-
-    console.log(isTabletOrMobile);
-
     let burgermenu = ()=>{
         if(!isTabletOrMobile){ return null;}
         return(
@@ -47,7 +58,7 @@ const Navbar = ()=>{
             <header className={"header"+screenQuery+barState} id="navbarToggleExternalContent">
                 <img className={"brand"+screenQuery} alt="Meu avatar" src={"./assets/avatar.png"}/>
                 <div class={"title"+screenQuery}>Bruno Ferraz</div>
-                
+                {burgermenu()}
                 <nav className={"navBar"+screenQuery+barState}>
                     <Link to="/about">About</Link>
                     <Link to="/contact">Portfolio</Link>
@@ -59,7 +70,7 @@ const Navbar = ()=>{
                     <a href="https://www.instagram.com/zarrefrb/"><FontAwesomeIcon icon={faInstagram}/></a>
                     <a href="https://github.com/brunoferraz"><FontAwesomeIcon icon={faGithub}/></a>
                 </div>
-                {burgermenu()}
+                
             </header>
         </Fragment>
     )
