@@ -1,38 +1,35 @@
 @import './../../variables/variables.scss';
+
+
 .header{
     width: 260px;
     height: 100%;
     background-color: $primary;
     display: flex;
     flex-flow: column ;
+    justify-content: flex-start;
     align-items: center;
-    // justify-content: center;
-    // border: blueviolet solid 1px;
 }
 .brand{
-    width: 200px;
-    display: block;
-    height: 200px;
-    background:url('./../../../public/assets/avatar.png') no-repeat;
-    margin-top: 20%;
-    margin-bottom: 20%;
-    // border: blueviolet solid 1px;
-    // margin: auto;
+    // width: 200px;
+    // height: 200px;
+    // background:url('./../../../public/assets/avatar.png') no-repeat;
+    margin-top: 10%;
 }
-h1{
+.title{
+    margin-top: 15%;
     align-self: center;
-    color: #{$primary_dark};
+    color: #{$baseline_on_primary};
     font-size: 2em;
-    // border: blueviolet solid 1px;
+
 }
 .navBar{
-    // border: blueviolet solid 1px;
-    margin-top: 10px;
+    margin-top: 5%;
     display: flex;
-    height: auto;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    height: auto;
 }
 .navBar a{
     font-size: 1em;
@@ -43,7 +40,92 @@ h1{
     color: #{$primary_dark};
 }
 .navBar a:hover{
-    background-color: $secondary;
     background-color:#{$secondary};
     color: #{$baseline_on_secondary};
+}
+.socialNetworkBar{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 5%;
+}
+.socialNetworkBar a{
+
+    color: #{$baseline_on_primary};
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+.socialNetworkBar a:hover{
+    border-radius: 15px;
+    background-color:#{$secondary};
+    color: #{$baseline_on_secondary};
+}
+////////////////////////////////////////////////////////////
+// MOBILE
+////////////////////////////////////////////////////////////
+.header.mobile{
+    transition: 0.0s;
+    width: 100vw;
+    height: 60px;
+    flex-flow: row ;
+    justify-content: space-between;
+}
+.barFolded{
+    order:0;
+}
+.header.mobile.barOpened{
+    transition:0.5s;
+    height: 200px;
+}
+.header.mobile.barFolded{
+    // transition: 0.0s;
+    height: 60px;
+}
+.brand.mobile{
+    display: none;
+}
+.title.mobile{
+    margin: 0;
+    margin-left: 2%;
+    font-size: 1em;
+}
+.navBar.mobile{
+    display: none;
+}
+.navBar.mobile.barOpened{
+    display: flex;
+    width:100%;
+}
+.socialNetworkBar.mobile{
+    max-width: 35%;
+    min-width: 20%;
+    align-self: flex-end;
+}
+.socialNetworkBar.mobile a{
+    margin: 0 5px 0 5px;
+}
+.socialNetworkBar.mobile.barOpened{
+    order:5;
+}
+.burguermenu.mobile{
+    width: 25px;
+    height: 25px;
+    // border: olive solid 1px;
+    display: flex;
+    flex-flow: column;
+    align-content: space-between;
+    justify-content: space-between;
+    margin-right: 2%;
+}
+.burguermenu.mobile div{
+    height: 20%;
+    width: 100%;
+    background-color: #{$primary_dark};
+}
+.burguermenu:hover > div{
+    background-color: #{$secondary};
 }
