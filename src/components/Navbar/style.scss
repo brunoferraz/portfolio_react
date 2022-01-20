@@ -1,15 +1,49 @@
-
-@import './../../shared/style/style.scss';
+@import './../../variables/variables.scss';
 .header{
-    width: 300px;
+    width: 260px;
     height: 100%;
-    // background-color:red;
-    background-color: $primary-color;
+    background-color: $primary;
+    display: flex;
+    flex-flow: column ;
+    align-items: center;
+    // justify-content: center;
+    // border: blueviolet solid 1px;
 }
-nav{
-    display: flexbox;
-
-    width:300;
-    height:300;
-    // background-color: $primary-color;
+.brand{
+    width: 200px;
+    display: block;
+    height: 200px;
+    background:url('./../../../public/assets/avatar.png') no-repeat;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    // border: blueviolet solid 1px;
+    // margin: auto;
+}
+h1{
+    align-self: center;
+    color: #{$primary_dark};
+    font-size: 2em;
+    // border: blueviolet solid 1px;
+}
+.navBar{
+    // border: blueviolet solid 1px;
+    margin-top: 10px;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.navBar a{
+    font-size: 1em;
+    padding: 10px 0px 10px 50px;
+    padding-left: 50px;
+    text-decoration: none;
+    display: block;
+    color: #{$primary_dark};
+}
+.navBar a:hover{
+    background-color: $secondary;
+    background-color:#{$secondary};
+    color: #{$baseline_on_secondary};
 }
