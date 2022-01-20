@@ -34,21 +34,21 @@ const Navbar = ()=>{
     if(isTabletOrMobile) screenQuery = " mobile"
     return(
         <Fragment>
-            <header className={"header"+screenQuery+barState} id="navbarToggleExternalContent">
-                <img className={"brand"+screenQuery} alt="Meu avatar" src={"./assets/avatar.png"}/>
-                <div class={"title"+screenQuery}>Bruno Ferraz</div>
-                <nav className={"navBar"+screenQuery+barState}>
+            <header className={"header"} id="navbarToggleExternalContent">
+                <img className={"brand"} alt="Meu avatar" src={"./assets/avatar.png"}/>
+                <div class={"title"}>Bruno Ferraz</div>
+                <nav className={"navBar"}>
                     <Link to="/about">About</Link>
                     <Link to="/contact">Portfolio</Link>
                     <Link to="/contact">Contact</Link>
                 </nav>
-                <div className={"socialNetworkBar"+screenQuery}>
+                <div className={"socialNetworkBar"}>
                     <a href="https://www.facebook.com/bruno.ferraz.585/"><FontAwesomeIcon icon={faFacebookF} /></a>
                     <a href="https://www.behance.net/brunoferrazpro"><FontAwesomeIcon icon={faBehance} /></a>
                     <a href="https://www.instagram.com/zarrefrb/"><FontAwesomeIcon icon={faInstagram}/></a>
                     <a href="https://github.com/brunoferraz"><FontAwesomeIcon icon={faGithub}/></a>
                 </div>
-                <div className={"burguermenu"+screenQuery} onClick={controlBar}>
+                <div className={"burguermenu"} onClick={controlBar}>
                     <div></div>
                     <div></div>
                     <div></div>
