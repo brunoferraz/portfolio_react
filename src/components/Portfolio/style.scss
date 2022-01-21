@@ -1,0 +1,52 @@
+@import './../../variables/variables.scss';
+.portfolio{
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+
+}
+.title_portfolio{
+    width: 100%;
+    color: #{$primary_dark};
+    font-size: 30px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+.gallery{
+    border: steelblue solid 1px;
+    width: 95%;
+    -webkit-column-count: 3;
+    /* -webkit-column-gap: 0px; */
+    -moz-column-count: 3;
+    /* -moz-column-gap: 0px; */
+    column-count: 3;
+    column-gap: 10px;
+}
+.gallery.mobile{
+    
+    align-self: center;
+    /* display: flex; */
+    /* flex-flow: row wrap; */
+    /* Prevent vertical gaps */
+    /* line-height: 0; */
+    -webkit-column-count: 1;
+    /* -webkit-column-gap: 0px; */
+    -moz-column-count: 1;
+    /* -moz-column-gap: 0px; */
+    column-count: 1;
+    column-gap: 0px;
+}
+.card{
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+}
+.card img{
+    width: 100%;
+    height: auto;
+    /* height: auto !important; */
+    /* object-fit: cover; */
+}

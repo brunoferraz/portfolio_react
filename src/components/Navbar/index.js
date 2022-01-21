@@ -7,7 +7,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useMediaQuery } from "react-responsive";
-import MediaQuery from 'react-responsive';
+// import MediaQuery from 'react-responsive';
 // import MediaQuery from "react-responsive/dist/Component";
 
 
@@ -57,11 +57,11 @@ const Navbar = ()=>{
         <Fragment>
             <header className={"header"+screenQuery+barState} id="navbarToggleExternalContent">
                 <img className={"brand"+screenQuery} alt="Meu avatar" src={"./assets/avatar.png"}/>
-                <div class={"title"+screenQuery}>Bruno Ferraz</div>
+                <div className={"title"+screenQuery}>Bruno Ferraz</div>
                 {burgermenu()}
                 <nav className={"navBar"+screenQuery+barState}>
                     <Link to="/about">About</Link>
-                    <Link to="/contact">Portfolio</Link>
+                    <Link to="/portfolio">Portfolio</Link>
                     <Link to="/contact">Contact</Link>
                 </nav>
                 <div className={"socialNetworkBar"+screenQuery+barState}>

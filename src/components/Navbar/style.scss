@@ -2,6 +2,7 @@
 
 
 .header{
+    position: relative;
     width: 260px;
     height: 100%;
     background-color: $primary;
@@ -68,6 +69,7 @@
 // MOBILE
 ////////////////////////////////////////////////////////////
 .header.mobile{
+    position: absolute;
     width: 100%;
     height: 60px;
 }
