@@ -5,11 +5,12 @@
   min-width: 375px;
   display: flex;
   flex-flow: row;
-  /* flex-wrap: wrap; */
+  /* flex-flow: row wrap; */
+  /* flex-flow: column; */
 }
 .App.mobile{
   flex-flow: column;
 }
 .App.smallscreen{
-  flex-flow: column;
+  /* flex-flow: row wrap; */
 }

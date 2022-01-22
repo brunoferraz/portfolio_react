@@ -1,20 +1,22 @@
 @import './../../variables/variables.scss';
 
-
-.header{
+.header_Container{
     position: relative;
-    width: 260px;
+    width: $headerNav_width;
     height: 100%;
     background-color: $primary;
+}
+.header{
+    position: fixed;
+    width: $headerNav_width;
+    background-color: $primary;
+    height: 100vh;
     display: flex;
     flex-flow: column ;
     justify-content: flex-start;
     align-items: center;
 }
 .brand{
-    // width: 200px;
-    // height: 200px;
-    // background:url('./../../../public/assets/avatar.png') no-repeat;
     margin-top: 10%;
 }
 .title{
@@ -68,19 +70,29 @@
 ////////////////////////////////////////////////////////////
 // MOBILE
 ////////////////////////////////////////////////////////////
-.header.mobile{
-    position: absolute;
+.header_Container.mobile{
     width: 100%;
-    height: 60px;
+    height: $headerNav_folded_height;
+}
+.header_Container.mobile.barUnfolded{
+    height: $headerNav_unfolded_height;
+}
+.header.mobile.barFolded{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: $headerNav_folded_height;
+}
+.header.mobile.barUnfolded{
+    display: block;
 }
 .burguermenu{
-    position: absolute;
-    top:15px;
-    right: 10px;
     display: flex;
     width: 30px;
     height: 20px;
-    align-self: flex-end;
+    margin-top: 20px;
+    margin-right: 15px;
+    float: right;
     flex-flow: column;
     justify-content: space-between;
 }
@@ -97,11 +109,9 @@
     display: none;
 }
 .title.mobile{
-    position: absolute;
-    top: 20px;
-    left:10px;
-    margin: 0;
-    align-self: flex-start;
+    float: left;
+    margin-top: 20px;
+    margin-left: 15px;
     font-size: 1.2em;
 }
 .navBar.mobile{
@@ -116,24 +126,22 @@
     position: relative;
     margin: 0;
     margin-top: 50px;
-    // padding-top: 20px;
-    // margin-bottom: auto;
+    margin-bottom: auto;
 }
 .socialNetworkBar.mobile{
-    position: relative;
-    max-width: 30%;
-    margin: 0;
-    margin-top: auto;
+    position:absolute;
     bottom: 15px;
-    // margin-left: 60px;
+    margin: auto;
+    left: calc(50% - 50px);
 }
 
 .barUnfolded{
     transition: height 0.1s;
 }
 .header.mobile.barFolded{
-    transition: 0.0s;
+    // transition: 0.0s;
 }
 .header.mobile.barUnfolded{
+    width: 100%;
     height: 220px;
 }

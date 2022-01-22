@@ -6,7 +6,7 @@ const PortfolioScreen = (props) =>{
     // console.log(props)
     return(
         <Fragment>
-            <Navbar/>
+            <Navbar screenQuery={props.screenQuery}/>
             <Portfolio screenQuery={props.screenQuery}/>
         </Fragment>
     )

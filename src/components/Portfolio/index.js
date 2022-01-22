@@ -9,7 +9,7 @@ async function getPortfolio(){
 }
 
 const Portfolio = (props) =>{
-    // console.log(props)
+    console.log(props)
     const [portfoliodata, setPortfolioData] = useState([]);
     useEffect(() =>{
         getPortfolio().then((data)=>{

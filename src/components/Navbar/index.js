@@ -14,13 +14,14 @@ import { useMediaQuery } from "react-responsive";
 const barFolded = " barFolded";
 const barUnfolded = " barUnfolded";
 
-const Navbar = ()=>{
+const Navbar = (props)=>{
     const [barState, setBarFoldState] = useState(barFolded); 
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
-    let screenQuery = "";
-    if(isTabletOrMobile) {
-        screenQuery = " mobile"
-    }
+    let screenQuery = props.screenQuery;
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1060px)' })
+    // let screenQuery = "";
+    // if(isTabletOrMobile) {
+    //     screenQuery = " mobile"
+    // }
     // const handleMediaQueryChange = (matches) => {
     //     // matches will be true or false based on the value for the media query
     //     console.log(matches);
@@ -54,8 +55,8 @@ const Navbar = ()=>{
         )
     }
     return(
-        <Fragment>
-            <header className={"header"+screenQuery+barState} id="navbarToggleExternalContent">
+        <div className={"header_Container"+screenQuery+barState}>
+            <header className={"header"+screenQuery+barState}>
                 <img className={"brand"+screenQuery} alt="Meu avatar" src={"./assets/avatar.png"}/>
                 <div className={"title"+screenQuery}>Bruno Ferraz</div>
                 {burgermenu()}
@@ -72,7 +73,7 @@ const Navbar = ()=>{
                 </div>
                 
             </header>
-        </Fragment>
+        </div>
     )
 }
 

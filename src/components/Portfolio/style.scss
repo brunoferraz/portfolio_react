@@ -1,24 +1,33 @@
 @import './../../variables/variables.scss';
 .portfolio{
-    margin-top: 60px;
-    width: 100%;
+    width: calc(100% - $headerNav_width);
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
+    border: olive solid 1px;
+    justify-content: center;
 
+}
+.portfolio.mobile{
+    width: 100%;
 }
 .title_portfolio{
     width: 100%;
     color: #{$primary_dark};
     font-size: 30px;
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    // margin-top: 40px;
+    // margin-bottom: 40px;
     font-weight: bold;
+    border: olivedrab solid 1px;
 }
-.gallery.desktop{
-    border: steelblue solid 1px;
-    width: 95%;
+.gallery{
     align-self: center;
+    border: steelblue solid 1px;
+}
+.gallery.threeColumn{
+    // border: steelblue solid 1px;
+    // width: 95%;
+    // align-self: center;
     -webkit-column-count: 3;
     /* -webkit-column-gap: 0px; */
     -moz-column-count: 3;
@@ -26,8 +35,8 @@
     column-count: 3;
     column-gap: 10px;
 }
-.gallery.smallscreen{
-    align-self: center;
+.gallery.twoColumn{
+    // align-self: center;
     /* display: flex; */
     /* flex-flow: row wrap; */
     /* Prevent vertical gaps */
@@ -39,8 +48,8 @@
     column-count: 2;
     column-gap: 0px;
 }
-.gallery.mobile{
-    align-self: center;
+.gallery.oneColumn{
+    // align-self: center;
     /* display: flex; */
     /* flex-flow: row wrap; */
     /* Prevent vertical gaps */
