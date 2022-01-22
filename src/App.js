@@ -4,15 +4,16 @@ import "./App.css";
 import { useMediaQuery } from "react-responsive";
 
 function App() {
-  const isTabletOrMobile  = useMediaQuery({ query: '(max-width: 1224px)' })
+  const isTabletOrMobile  = useMediaQuery({ query: '(max-width: 660px)' })
+  const isSmallScreen  = useMediaQuery({ query: '(max-width: 1224px)' })
   const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)'})
-  const isBigScreen       = useMediaQuery({ query: '(min-width: 1824px)' })
-  const isPortrait        = useMediaQuery({ query: '(orientation: portrait)' })
-  const isRetina          = useMediaQuery({ query: '(min-resolution: 2dppx)' })
+  // const isBigScreen       = useMediaQuery({ query: '(min-width: 1824px)' })
+  // const isPortrait        = useMediaQuery({ query: '(orientation: portrait)' })
+  // const isRetina          = useMediaQuery({ query: '(min-resolution: 2dppx)' })
   let screenQuery = "";
-  if(isTabletOrMobile) {
-      screenQuery = " mobile"
-  }
+  if(isSmallScreen) screenQuery += " smallscreen";
+  if(isTabletOrMobile) screenQuery += " mobile";
+  if(isDesktopOrLaptop) screenQuery = " desktop";
   return (
     <div className={"App"+screenQuery}>
       <Routes screenQuery={screenQuery} ></Routes>

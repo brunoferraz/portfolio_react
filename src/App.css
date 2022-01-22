@@ -7,6 +7,9 @@
   flex-flow: row;
   /* flex-wrap: wrap; */
 }
-.App.mobile {
+.App.mobile{
+  flex-flow: column;
+}
+.App.smallscreen{
   flex-flow: column;
 }
