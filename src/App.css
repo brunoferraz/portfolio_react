@@ -9,7 +9,7 @@
   /* flex-flow: column; */
 }
 .App.mobile{
-  flex-flow: column;
+  flex-flow: row wrap;
 }
 .App.smallscreen{
   /* flex-flow: row wrap; */
