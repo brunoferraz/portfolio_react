@@ -2,8 +2,8 @@
 .portfolio{
     width: calc(100% - $headerNav_width);
     display: flex;
-    flex-flow: column wrap;
-    border: olive solid 1px;
+    flex-flow: column;
+    // border: olive solid 1px;
     align-content: flex-start;
     // justify-content: center;
 
@@ -19,11 +19,11 @@
     // margin-top: 40px;
     // margin-bottom: 40px;
     font-weight: bold;
-    border: olivedrab solid 1px;
+    // border: olivedrab solid 1px;
 }
 .gallery{
     align-self: center;
-    border: steelblue solid 1px;
+    // border: steelblue solid 1px;
 }
 .gallery.threeColumn{
     // border: steelblue solid 1px;

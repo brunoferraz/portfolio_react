@@ -132,9 +132,16 @@
     position:absolute;
     bottom: 15px;
     margin: auto;
+    transition:0.3s;
     left: calc(50% - 50px);
 }
-
+.socialNetworkBar.mobile.twoColumn{
+    transition:0.3s;
+    left: calc(50% - 80px);
+}
+.socialNetworkBar.mobile.threeColumn{
+    // left: calc(50% - 80px);
+}
 .barUnfolded{
     transition: height 0.1s;
 }
