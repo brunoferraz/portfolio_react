@@ -1,0 +1,24 @@
+@import "./../../../../variables/variables.scss";
+.tag{
+    border-radius: 25px;
+    // border:steelblue solid 1px;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 5px 0px 5px;
+    padding: 5px 15px;
+    font-size: 14px;
+    background-color: #{$primary};
+    color: #{$primary_dark};
+}
+.tag:hover{
+    background-color: #{$secondary}!important;
+    color: #{$secondary_light} !important;
+}
+.tag.unchecked{
+    background-color: #{$primary};
+    color: #{$primary_dark};
+}
+.tag.checked{
+    background-color: #{$secondary};
+    color: #{$baseline_on_secondary};
+}

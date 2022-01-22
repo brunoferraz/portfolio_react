@@ -1,0 +1,11 @@
+@import "./../../../variables/variables.scss";
+.tagcloud_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    // border: blue solid 1px;
+}
