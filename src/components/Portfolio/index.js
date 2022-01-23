@@ -20,17 +20,24 @@ const Portfolio = (props) =>{
     }
     const getProjectsOn = (tagsOnList) =>{
         //initiate list as off
-        let projOnList = []
+        let projOnList = [];
+        console.log(tagsOnList);
+        // let newlist = [...tagsOnList["tags"]];
+        
+        // let tagsOn = [...tagsOnList["tags"]];
         for(let i = 0; i <portfoliodata.length; i++){
             projOnList[i] = " disable";
         }
-        //run through tags 
-        tagsOnList.forEach(tag => {
-            projectsMappedbyTag[tag].forEach(id =>{
-                projOnList[id] = " enable"
-            })
-        });
         setProjectsOnList([...projOnList])
+        // newlist.forEach(tag => {
+            // console.log(tag)
+            // projectsMappedbyTag[tag].forEach(proj =>{
+            //     // console.log(proj)
+            //     // projOnList[id] = " enable";
+            // })
+        // })
+        // setProjectsOnList([...projOnList])
+        // console.log(projOnList);
     }
 
     useEffect(() =>{
@@ -43,9 +50,9 @@ const Portfolio = (props) =>{
             setProjectsOnList([...projOnList])
         })
     },[])
-    useEffect(()=>{
+    // useEffect(()=>{
 
-    },[projectsOnList])
+    // },[projectsOnList])
 
     return(
         <Fragment>
@@ -55,7 +62,7 @@ const Portfolio = (props) =>{
                     <TagCloud projects= {portfoliodata} mapProjectsByTag={mapProjectsByTag} getProjectsOn={getProjectsOn} ></TagCloud>
                     <div className={"gallery"+props.screenQuery}>
                         {portfoliodata.map((proj, index)=>
-                            <div key={index} className={"card"}>
+                            <div key={index} className={"card"+projectsOnList[index]}>
                                 <img alt="" key={index} src={proj.face}/>
                             </div>
                         )}

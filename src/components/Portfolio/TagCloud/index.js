@@ -6,7 +6,7 @@ const TagCloud = (props) => {
     let taglist = [];
     let activeTags = [];
     const projects = props.projects;
-    const getProjectsOn = props.getProjectsOn;
+    
 
     const getAlltags= ()=>{
         let tagsNoRepeat = [];
@@ -26,7 +26,7 @@ const TagCloud = (props) => {
             projects.forEach(proj => {
                 // console.log(proj)
                 if(proj.tags.indexOf(tag) !== -1){
-                    mapprojects[tag].push(proj.id)
+                    mapprojects[tag].push([proj.id, proj.name])
                 }
             })
         })
@@ -39,7 +39,8 @@ const TagCloud = (props) => {
         }else if(activeTags.length > 0){
             activeTags.push(name);
         }
-        getProjectsOn(activeTags);
+        console.log(activeTags);
+        props.getProjectsOn({tags:[...activeTags]});
     }
     const onRemoveTag = (name) =>{
         if(activeTags.length>0){
@@ -49,7 +50,8 @@ const TagCloud = (props) => {
         if(activeTags.length===0){
             activeTags = [...taglist];
         }
-        getProjectsOn(activeTags);
+        console.log(activeTags);
+        props.getProjectsOn({tags:[...activeTags]});
     }
 
     taglist = [...getAlltags()];
