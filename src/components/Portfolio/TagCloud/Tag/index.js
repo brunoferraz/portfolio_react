@@ -22,7 +22,7 @@ const Tag = (props)=>{
 
     return(
         <Fragment>
-            <a href="#" className={"tag"+buttonState} onClick={toggleState}>{props.name}</a>
+            <a className={"tag"+buttonState} onClick={toggleState}>{props.name}</a>
         </Fragment>
     )
 }

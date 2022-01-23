@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import Card from "./Card";
 import './style.scss';
 import TagCloud from "./TagCloud";
 
@@ -14,6 +15,7 @@ const projectsMappedbyTag = {};
 const Portfolio = (props) =>{
     const [portfoliodata, setPortfolioData] = useState([]);
     // const [projectsOnList, setProjectsOnList] = useState([]);
+    // const [selectedProjects, setSelectedProjects] = useState({});
     
     
 
@@ -24,34 +26,38 @@ const Portfolio = (props) =>{
         let projOnList = []
         for(var i =0; i < portfoliodata.length; i++){
             projOnList.push(" disable");
+            portfoliodata[i]["state"]= " disable";
         }
         projectsOnList = [...projOnList];
         let local = [...tagsOnList["tags"]]
-        console.log(projectsOnList)
         local.forEach(tag =>{
             let tagProjects = projectsMappedbyTag[tag]
             tagProjects.forEach(proj =>{
                 projectsOnList[proj[0]] = " enable";
-                console.log(proj[0])
+                portfoliodata[proj[0]]["state"]= " enable";
             })
         })
-        console.log(projectsOnList)
+        console.log(portfoliodata)
+        // this.forceUpdate();
+        // setSelectedProjects({states:[...projectsOnList]})
+        // console.log(selectedProjects)
     }
 
     useEffect(() =>{
         getPortfolio().then((data)=>{
+            for(let i =0; i < data["projects"].length; i++){
+                data["projects"]["state"]= " enable";   
+            }
             setPortfolioData(data["projects"])
             let projOnList = []
-            for(var i =0; i < data["projects"].length; i++){
+            for(let i =0; i < data["projects"].length; i++){
                 projOnList.push(" enable");
             }
             projectsOnList = [...projOnList]
+            
+            // setSelectedProjects({states:[...projectsOnList]})
         })
     },[])
-    // useEffect(()=>{
-
-    // },[projectsOnList])
-
     return(
         <Fragment>
             {
@@ -60,16 +66,13 @@ const Portfolio = (props) =>{
                     <TagCloud projects= {portfoliodata} mapProjectsByTag={mapProjectsByTag} getProjectsOn={getProjectsOn} ></TagCloud>
                     <div className={"gallery"+props.screenQuery}>
                         {portfoliodata.map((proj, index)=>
-                            <div key={index} className={"card"+projectsOnList[index]}>
-                                <img alt="" key={index} src={proj.face}/>
-                            </div>
+                            <Card key={index} state ={projectsOnList[index]} face={proj.face} />
                         )}
+                        <p>{projectsOnList[0]}</p>
                     </div>
                 </div>
             }
         </Fragment>
     )
 }
-
-
 export default Portfolio;

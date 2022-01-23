@@ -41,6 +41,7 @@ const TagCloud = (props) => {
             local.push(name);
         }
         activeTags = [...local]
+        console.log(activeTags)
         props.getProjectsOn({tags:[...local]});
     }
     const onRemoveTag = (name) =>{
