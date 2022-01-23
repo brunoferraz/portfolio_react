@@ -6,8 +6,8 @@ const TagCloud = (props) => {
     let taglist = [];
     let activeTags = [];
     const projects = props.projects;
-    
-
+    let projects_mapped = {};
+;
     const getAlltags= ()=>{
         let tagsNoRepeat = [];
         projects.forEach(proj => {
@@ -30,6 +30,7 @@ const TagCloud = (props) => {
                 }
             })
         })
+        Object.assign(projects_mapped, mapprojects);
         return mapprojects;
     }
     const onAddTag = (name) =>{
@@ -41,8 +42,6 @@ const TagCloud = (props) => {
             local.push(name);
         }
         activeTags = [...local]
-        console.log(activeTags)
-        props.getProjectsOn({tags:[...local]});
     }
     const onRemoveTag = (name) =>{
         let local = [...activeTags];
@@ -56,10 +55,24 @@ const TagCloud = (props) => {
         activeTags = [...local]
         props.getProjectsOn({tags:[...local]});
     }
-
+    const getProjectsOn = ()=>{
+        let projectsEnable = []
+        for(let i=0; i< props.projects.length; i++){
+            projectsEnable.push(" disable");
+        }
+        activeTags.forEach(tag=>{
+            projects_mapped[tag].forEach(proj=>{
+                let id = proj[0]
+                projectsEnable[id] = " enable"
+            })
+        })
+        props.getProjectsOn([...projectsEnable])
+    }
     taglist = [...getAlltags()];
     activeTags = [...taglist];
     props.mapProjectsByTag(mapProjectsByTag());
+    getProjectsOn();
+
     return(
         <Fragment>
             <div className="tagcloud_container">

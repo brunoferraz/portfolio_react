@@ -24,26 +24,26 @@ const Portfolio = (props) =>{
         Object.assign(projectsMappedbyTag, projects_mapped);
     }
     const getProjectsOn = (tagsOnList) =>{
-        let projOnList = []
-        selectedProjects["states"].splice(0, selectedProjects["states"].length);
+        // let projOnList = []
+        // selectedProjects["states"].splice(0, selectedProjects["states"].length);
 
-        for(var i =0; i < portfoliodata.length; i++){
-            projOnList.push(" disable");
-            portfoliodata[i]["state"]= " disable";
-            selectedProjects["states"].push(" disable")
-        }
-        projectsOnList = [...projOnList];
-        // selectedProjects["states"] = [...projectsOnList];
+        // for(var i =0; i < portfoliodata.length; i++){
+        //     projOnList.push(" disable");
+        //     portfoliodata[i]["state"]= " disable";
+        //     selectedProjects["states"].push(" disable")
+        // }
+        // projectsOnList = [...projOnList];
+        // // selectedProjects["states"] = [...projectsOnList];
 
-        let local = [...tagsOnList["tags"]]
-        local.forEach(tag =>{
-            let tagProjects = projectsMappedbyTag[tag]
-            tagProjects.forEach(proj =>{
-                projectsOnList[proj[0]] = " enable";
-                portfoliodata[proj[0]]["state"]= " enable";
-                selectedProjects["states"][proj[0]] = " enable";
-            })
-        })
+        // let local = [...tagsOnList["tags"]]
+        // local.forEach(tag =>{
+        //     let tagProjects = projectsMappedbyTag[tag]
+        //     tagProjects.forEach(proj =>{
+        //         projectsOnList[proj[0]] = " enable";
+        //         portfoliodata[proj[0]]["state"]= " enable";
+        //         selectedProjects["states"][proj[0]] = " enable";
+        //     })
+        // })
         // selectedProjects["states"] = [...projectsOnList];
         // console.log(portfoliodata)
         // this.forceUpdate();
@@ -68,10 +68,10 @@ const Portfolio = (props) =>{
     },[])
     const renderCards = ()=>{
         let row = [];
-        console.log("sdfdsfdfd")
-        console.log(selectedProjects["states"]);
+        // console.log("sdfdsfdfd")
+        // console.log(selectedProjects["states"]);
         for(var i=0; i<projectsOnList.length; i++){
-            console.log(projectsOnList[i])
+            // console.log(projectsOnList[i])
             // if(portfoliodata[i].state === " enable"){
             //     row.push(<p>{portfoliodata[i].state}</p>)
             // }
