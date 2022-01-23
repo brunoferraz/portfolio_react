@@ -9,35 +9,33 @@ async function getPortfolio(){
     return data;
 }
 
-
+let projectsOnList = [];
+const projectsMappedbyTag = {};
 const Portfolio = (props) =>{
     const [portfoliodata, setPortfolioData] = useState([]);
-    const [projectsOnList, setProjectsOnList] = useState([]);
-    const projectsMappedbyTag = {}
+    // const [projectsOnList, setProjectsOnList] = useState([]);
+    
+    
 
     const mapProjectsByTag = (projects_mapped)=>{
         Object.assign(projectsMappedbyTag, projects_mapped);
     }
     const getProjectsOn = (tagsOnList) =>{
-        //initiate list as off
-        let projOnList = [];
-        console.log(tagsOnList);
-        // let newlist = [...tagsOnList["tags"]];
-        
-        // let tagsOn = [...tagsOnList["tags"]];
-        for(let i = 0; i <portfoliodata.length; i++){
-            projOnList[i] = " disable";
+        let projOnList = []
+        for(var i =0; i < portfoliodata.length; i++){
+            projOnList.push(" disable");
         }
-        setProjectsOnList([...projOnList])
-        // newlist.forEach(tag => {
-            // console.log(tag)
-            // projectsMappedbyTag[tag].forEach(proj =>{
-            //     // console.log(proj)
-            //     // projOnList[id] = " enable";
-            // })
-        // })
-        // setProjectsOnList([...projOnList])
-        // console.log(projOnList);
+        projectsOnList = [...projOnList];
+        let local = [...tagsOnList["tags"]]
+        console.log(projectsOnList)
+        local.forEach(tag =>{
+            let tagProjects = projectsMappedbyTag[tag]
+            tagProjects.forEach(proj =>{
+                projectsOnList[proj[0]] = " enable";
+                console.log(proj[0])
+            })
+        })
+        console.log(projectsOnList)
     }
 
     useEffect(() =>{
@@ -47,7 +45,7 @@ const Portfolio = (props) =>{
             for(var i =0; i < data["projects"].length; i++){
                 projOnList.push(" enable");
             }
-            setProjectsOnList([...projOnList])
+            projectsOnList = [...projOnList]
         })
     },[])
     // useEffect(()=>{

@@ -33,25 +33,27 @@ const TagCloud = (props) => {
         return mapprojects;
     }
     const onAddTag = (name) =>{
-        if(activeTags.length === taglist.length){
-            activeTags = []
-            activeTags.push(name);
-        }else if(activeTags.length > 0){
-            activeTags.push(name);
+        let local = [...activeTags];
+        if(local.length === taglist.length){
+            local = []
+            local.push(name);
+        }else if(local.length > 0){
+            local.push(name);
         }
-        console.log(activeTags);
-        props.getProjectsOn({tags:[...activeTags]});
+        activeTags = [...local]
+        props.getProjectsOn({tags:[...local]});
     }
     const onRemoveTag = (name) =>{
-        if(activeTags.length>0){
-            let index = activeTags.indexOf(name);
-            activeTags.splice(index, 1);
+        let local = [...activeTags];
+        if(local.length>0){
+            let index = local.indexOf(name);
+            local.splice(index, 1);
         }
-        if(activeTags.length===0){
-            activeTags = [...taglist];
+        if(local.length===0){
+            local = [...taglist];
         }
-        console.log(activeTags);
-        props.getProjectsOn({tags:[...activeTags]});
+        activeTags = [...local]
+        props.getProjectsOn({tags:[...local]});
     }
 
     taglist = [...getAlltags()];
