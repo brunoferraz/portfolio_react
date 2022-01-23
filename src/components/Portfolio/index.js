@@ -12,7 +12,7 @@ async function getPortfolio(){
 
 const Portfolio = (props) =>{
     const [portfoliodata, setPortfolioData] = useState([]);
-    const projectsOn = {};
+    const [projectsOnList, setProjectsOnList] = useState([]);
     const projectsMappedbyTag = {}
 
     const mapProjectsByTag = (projects_mapped)=>{
@@ -20,26 +20,32 @@ const Portfolio = (props) =>{
     }
     const getProjectsOn = (tagsOnList) =>{
         //initiate list as off
+        let projOnList = []
         for(let i = 0; i <portfoliodata.length; i++){
-            projectsOn[i] = " disable";
+            projOnList[i] = " disable";
         }
         //run through tags 
         tagsOnList.forEach(tag => {
             projectsMappedbyTag[tag].forEach(id =>{
-                projectsOn[id] = " enable"
+                projOnList[id] = " enable"
             })
         });
-            //set on
+        setProjectsOnList([...projOnList])
     }
 
     useEffect(() =>{
         getPortfolio().then((data)=>{
             setPortfolioData(data["projects"])
-            for(let i = 0; i <portfoliodata.length; i++){
-                projectsOn[i] = " enable";
+            let projOnList = []
+            for(var i =0; i < data["projects"].length; i++){
+                projOnList.push(" enable");
             }
+            setProjectsOnList([...projOnList])
         })
     },[])
+    useEffect(()=>{
+
+    },[projectsOnList])
 
     return(
         <Fragment>
