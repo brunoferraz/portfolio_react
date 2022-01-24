@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import './style.scss';
 import Tag from "./Tag";
 
@@ -42,6 +42,7 @@ const TagCloud = (props) => {
             local.push(name);
         }
         activeTags = [...local]
+        getProjectsOn()
     }
     const onRemoveTag = (name) =>{
         let local = [...activeTags];
@@ -53,8 +54,10 @@ const TagCloud = (props) => {
             local = [...taglist];
         }
         activeTags = [...local]
-        props.getProjectsOn({tags:[...local]});
+        // props.getProjectsOn({tags:[...local]});
+        getProjectsOn()
     }
+
     const getProjectsOn = ()=>{
         let projectsEnable = []
         for(let i=0; i< props.projects.length; i++){
@@ -68,16 +71,19 @@ const TagCloud = (props) => {
         })
         props.getProjectsOn([...projectsEnable])
     }
-    taglist = [...getAlltags()];
-    activeTags = [...taglist];
+
+    taglist     = [...getAlltags()];
+    activeTags  = [...taglist];
     props.mapProjectsByTag(mapProjectsByTag());
-    getProjectsOn();
+    useEffect(()=>{
+        getProjectsOn()
+    },[])
 
     return(
         <Fragment>
             <div className="tagcloud_container">
             {taglist.map((tag, index) =>
-                <Tag key={index} onAddTag={onAddTag} onRemoveTag={onRemoveTag}  name={tag}/>
+                <Tag key={index} onAddTag={onAddTag} onRemoveTag={onRemoveTag} name={tag}/>
             )}
             </div>
         </Fragment>
