@@ -3,6 +3,9 @@ import Card from "./Card";
 import './style.scss';
 import TagCloud from "./TagCloud";
 
+import { useRecoilState } from "recoil";
+import { projectList } from "./../../atoms/projectList";
+import { projectsState } from './../../atoms/projectsStates'
 
 async function getPortfolio(){
     let response = await fetch("http://localhost:3000/api/mock-projects.json");
@@ -10,39 +13,36 @@ async function getPortfolio(){
     return data;
 }
 
-// let projectsOnList = [];
-const projectsMappedbyTag = {};
 const Portfolio = (props) =>{
-    const [portfoliodata, setPortfolioData] = useState([]);
-    const [projectsOnList, setProjectsOnList] = useState([]);
-    
-    
+    // const [portfoliodata, setPortfolioData] = useState([]);
+    const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
+    const [projectsStatesList, setProjectsStates] = useRecoilState(projectsState);
 
-    const mapProjectsByTag = (projects_mapped)=>{
-        Object.assign(projectsMappedbyTag, projects_mapped);
-    }
-    const getProjectsOn = (projects_on) =>{
-        setProjectsOnList(projects_on);
-    }
 
     useEffect(() =>{
         getPortfolio().then((data)=>{
             setPortfolioData(data["projects"])
         })
     },[])
+    useEffect(()=>{
+        if(portfoliodata.length!=0){
+            let initiate=[];
+            for(let i =0 ; i< portfoliodata;i++){
+                initiate.push(" enable");
+            }
+            setProjectsStates([...initiate])
+        }
+    },[portfoliodata])
     return(
         <Fragment>
             {
                 <div className={"portfolio"+props.screenQuery}>
                     <h1 className="title_portfolio">Portfolio</h1>
-                    <TagCloud projects= {portfoliodata} mapProjectsByTag={mapProjectsByTag} getProjectsOn={getProjectsOn} ></TagCloud>
+                    <TagCloud projects= {portfoliodata} ></TagCloud>
                     <div className={"gallery"+props.screenQuery}>
                         {
                             portfoliodata.map((port, index) =>
-                                <div  key={index}>
-                                    <Card key={index} face={port.face} id={port.id} states={projectsOnList} />
-                                    {/* <p>{projectsOnList}</p> */}
-                                </div>
+                                    <Card key={index} face={port.face} id={port.id} states={projectsStatesList[port.id]} />
                                 )
                         }
                     </div>

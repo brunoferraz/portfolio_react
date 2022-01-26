@@ -1,48 +1,57 @@
 import React, { Fragment, useEffect } from "react";
 import './style.scss';
 import Tag from "./Tag";
+import { alltagsList } from "../../../atoms/alltagsList";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { projectList } from "./../../../atoms/projectList.js";
+import { projectsMappedbyTag } from './../../../atoms/projectsMappedByTag';
+import { projectsState } from "../../../atoms/projectsStates";
+import { enebledTags } from "../../../atoms/enebledTags";
 
 const TagCloud = (props) => {
-    let taglist = [];
-    let activeTags = [];
-    const projects = props.projects;
-    let projects_mapped = {};
+    const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
+    const [tagsList, setAllTagsList] = useRecoilState(alltagsList);
+    const [mappedByTag, setMappedByTag] = useRecoilState(projectsMappedbyTag);
+    const [projectsStatesList, setProjectsStates] = useRecoilState(projectsState);
+    const [activeTags, setEnabledTags] = useRecoilState(enebledTags);
+    // let activeTags = [];
+
+
 ;
     const getAlltags= ()=>{
         let tagsNoRepeat = [];
-        projects.forEach(proj => {
+        portfoliodata.forEach(proj => {
             proj.tags.forEach(tag =>{
                 if(tagsNoRepeat.indexOf(tag)===-1){
                     tagsNoRepeat.push(tag);
                 };
             })
         });
+        setAllTagsList([...tagsNoRepeat]);
+        setEnabledTags([...tagsNoRepeat]);
         return tagsNoRepeat;
     }
     const mapProjectsByTag = () => {
         let mapprojects = {}
-        taglist.forEach(tag =>{
+        tagsList.forEach(tag =>{
             mapprojects[tag] = []
-            projects.forEach(proj => {
-                // console.log(proj)
+            portfoliodata.forEach(proj => {
                 if(proj.tags.indexOf(tag) !== -1){
                     mapprojects[tag].push([proj.id, proj.name])
                 }
             })
         })
-        Object.assign(projects_mapped, mapprojects);
-        return mapprojects;
+        setMappedByTag(mapprojects)
     }
     const onAddTag = (name) =>{
         let local = [...activeTags];
-        if(local.length === taglist.length){
+        if(local.length === tagsList.length){
             local = []
             local.push(name);
         }else if(local.length > 0){
             local.push(name);
         }
-        activeTags = [...local]
-        getProjectsOn()
+        setEnabledTags([...local])
     }
     const onRemoveTag = (name) =>{
         let local = [...activeTags];
@@ -51,38 +60,58 @@ const TagCloud = (props) => {
             local.splice(index, 1);
         }
         if(local.length===0){
-            local = [...taglist];
+            local = [...tagsList];
         }
-        activeTags = [...local]
-        // props.getProjectsOn({tags:[...local]});
-        getProjectsOn()
+        setEnabledTags([...local])
+        // activeTags = [...local]
+        // getProjectsOn()
     }
 
-    const getProjectsOn = ()=>{
+    const getProjectsStates = ()=>{
         let projectsEnable = []
         for(let i=0; i< props.projects.length; i++){
             projectsEnable.push(" disable");
         }
+        // console.log(activeTags)
         activeTags.forEach(tag=>{
-            projects_mapped[tag].forEach(proj=>{
+            mappedByTag[tag].forEach(proj=>{
                 let id = proj[0]
                 projectsEnable[id] = " enable"
             })
         })
-        props.getProjectsOn([...projectsEnable])
+        setProjectsStates([...projectsEnable])
     }
 
-    taglist     = [...getAlltags()];
-    activeTags  = [...taglist];
-    props.mapProjectsByTag(mapProjectsByTag());
     useEffect(()=>{
-        getProjectsOn()
-    },[])
+        if(portfoliodata.length !== 0){
+            getAlltags();
+            // taglist     = [...getAlltags()];
+            // activeTags  = [...taglist];
+        }
+    },[portfoliodata])
+
+    useEffect(()=>{
+        if(tagsList.length!==0){
+            mapProjectsByTag();
+        }
+    },[tagsList])
+
+    useEffect(()=>{
+        if(mappedByTag.length!==0){
+            getProjectsStates();
+        }
+    },[mappedByTag])
+    useEffect(()=>{
+        if((activeTags.length!==0)&&(mappedByTag.length!==0)){
+            getProjectsStates();
+        }
+    },[activeTags])
 
     return(
         <Fragment>
+            
             <div className="tagcloud_container">
-            {taglist.map((tag, index) =>
+            {tagsList.map((tag, index) =>
                 <Tag key={index} onAddTag={onAddTag} onRemoveTag={onRemoveTag} name={tag}/>
             )}
             </div>

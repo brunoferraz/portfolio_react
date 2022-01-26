@@ -2,6 +2,7 @@ import React from "react";
 import Routes from "./routes";
 import "./App.css";
 import { useMediaQuery } from "react-responsive";
+import { RecoilRoot } from "recoil";
 
 function App() {
   const oneColumn  = useMediaQuery({ query: '(max-width: 660px)' })
@@ -16,10 +17,13 @@ function App() {
   if(oneColumn) screenQuery = " mobile oneColumn";
   
   
+  
   return (
-    <div className={"App"+screenQuery}>
-      <Routes screenQuery={screenQuery} ></Routes>
-    </div>
+    <RecoilRoot>
+      <div className={"App"+screenQuery}>
+        <Routes screenQuery={screenQuery} ></Routes>
+      </div>
+    </RecoilRoot>
   );
 }
 
