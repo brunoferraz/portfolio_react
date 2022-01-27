@@ -4,6 +4,7 @@ import AboutScreen from "./screens/AboutScreen";
 import ContactScreen from "./screens/ContactScreen";
 import HomeScreen from "./screens/HomeScreen";
 import PortfolioScreen from "./screens/PortfolioScreen";
+import ProjectScreen from "./screens/ProjectScreen";
 
 const Routes = (props)=>{
     return(
@@ -18,6 +19,7 @@ const Routes = (props)=>{
                     <PortfolioScreen screenQuery={props.screenQuery} />
                 </Route>
                 <Route exact path='/contact' component={ContactScreen} />
+                <Route exact path='/project/:id' component={ProjectScreen} />
             </Switch>
         </BrowserRouter>
     )

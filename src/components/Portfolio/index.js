@@ -1,11 +1,12 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import Card from "./Card";
 import './style.scss';
 import TagCloud from "./TagCloud";
 
 import { useRecoilState } from "recoil";
 import { projectList } from "./../../atoms/projectList";
-import { projectsState } from './../../atoms/projectsStates'
+import { projectsState } from './../../atoms/projectsStates';
+
 
 async function getPortfolio(){
     let response = await fetch("http://localhost:3000/api/mock-projects.json");
@@ -25,7 +26,7 @@ const Portfolio = (props) =>{
         })
     },[])
     useEffect(()=>{
-        if(portfoliodata.length!=0){
+        if(portfoliodata.length!==0){
             let initiate=[];
             for(let i =0 ; i< portfoliodata;i++){
                 initiate.push(" enable");
@@ -42,7 +43,7 @@ const Portfolio = (props) =>{
                     <div className={"gallery"+props.screenQuery}>
                         {
                             portfoliodata.map((port, index) =>
-                                    <Card key={index} face={port.face} id={port.id} states={projectsStatesList[port.id]} />
+                                    <Card key={index} face={port.face} name={port.name} id={port.id} state={projectsStatesList[port.id]} screenQuery={props.screenQuery} />
                                 )
                         }
                     </div>
