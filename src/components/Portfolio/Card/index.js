@@ -38,7 +38,7 @@ class Card extends React.Component{
     render(){
         if(this.props.states===" disable")return null
     return(
-        <Link to={`/projects/${this.props.id}`} key={this.props.index} className={"card"+this.props.state + this.props.screenQuery}>
+        <Link to={`/project/${this.props.id}`} key={this.props.index} className={"card"+this.props.state + this.props.screenQuery}>
             <img className="img_box" alt="" key={this.props.index} src={this.props.face} ref={this.imgRef}/>
             <div className="overlay" ref={this.overLayRef}></div>
             <div className="bar"><p>{this.props.name}</p></div>

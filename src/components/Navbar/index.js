@@ -57,7 +57,7 @@ const Navbar = (props)=>{
     return(
         <div className={"header_Container"+screenQuery+barState}>
             <header className={"header"+screenQuery+barState}>
-                <img className={"brand"+screenQuery} alt="Meu avatar" src={"./assets/avatar.png"}/>
+                <img className={"brand"+screenQuery} alt="Meu avatar" src={"http://localhost:3000/assets/avatar.png"}/>
                 <div className={"title"+screenQuery}>Bruno Ferraz</div>
                 {burgermenu()}
                 <nav className={"navBar"+screenQuery+barState}>
