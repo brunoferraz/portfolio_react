@@ -1,0 +1,31 @@
+@import './../../../../../variables/variables.scss';
+
+.post_gallery{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    // margin-bottom: 30px;
+}
+.post_gallery_description{
+    // margin-top: 40px;
+    // margin-bottom: 10px;
+    font-size: 1em;
+    // font-weight: bold;
+    color: #{$primary_dark};
+}
+.post_gallery_item{
+    flex:1 1 100px;
+    width: 50%;
+    margin-top: 5px;
+}
+.post_gallery_item img{
+    width: 100%;
+
+}
+.gallery_item_description.oneColumn{
+    font-size: 1em;
+}
+.gallery_item_description{
+    font-size: 1em;
+    color: #{$primary_dark};
+}

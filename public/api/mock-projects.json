@@ -12,20 +12,35 @@
             {"imgPath":"assets/mabel/detalhe_pe.png",
             "description":""
             },
+            {"imgPath":"assets/mabel/detalhe_camisa.png",
+                "description":""
+                },
+            {"gallery":[
+                {"imgPath":"assets/mabel/key_light.png",
+                "description":"Key light"},
+                {"imgPath":"assets/mabel/fill_light.png",
+                "description":"Fill light"},
+                {"imgPath":"assets/mabel/rim_light.png",
+                    "description":"Rim light"}
+            ],
+            "description":"",
+            "columns":"3"
+            },
+            {"imgPath":"assets/mabel/rim_fill_key_background.png",
+                "description":"Light Composition ( Key + Fill + Rim )"
+                },
             {"gallery":[
                 {"imgPath":"assets/mabel/ambient_light.png",
-                "description":"Ambient_light"},
+                "description":"Ambient light"},
                 {"imgPath":"assets/mabel/ao.png",
-                "description":"Ambient occlusion"},
-                {"imgPath":"assets/mabel/fill_light.png",
-                "description":"fill_light"},
-                {"imgPath":"assets/mabel/key_fill_light.png",
-                "description":"key_fill_light"},
-                {"imgPath":"assets/mabel/rim_light.png",
-                "description":"rim_light"}
+                "description":"Ambient occlusion"}
             ],
-            "description":"composicao de luzes"
-            }
+            "description":"",
+            "columns":"3"
+            },
+            {"imgPath":"assets/mabel/mabel_inteira.png",
+                "description":"Final Render (Previous composition + Ambient lights)"
+                }
         ]
     },
     {

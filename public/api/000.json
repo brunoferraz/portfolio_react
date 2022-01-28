@@ -1,0 +1,26 @@
+{
+    "post":[
+        {"imgPath":"assets/mabel/detalhe_pe.png",
+        "description":"Model detail"
+        },
+        {"gallery":[
+            {"imgPath":"assets/mabel/ambient_light.png",
+            "description":"Ambient light"},
+            {"imgPath":"assets/mabel/ao.png",
+            "description":"Ambient occlusion"},
+            {"imgPath":"assets/mabel/fill_light.png",
+            "description":"Fill light"},
+            {"imgPath":"assets/mabel/key_fill_light.png",
+            "description":"Key fill light"},
+            {"imgPath":"assets/mabel/rim_light.png",
+            "description":"Rim light"},
+            {"imgPath":"assets/mabel/rim_light.png",
+                "description":"Isla, Te amo"}
+        ],
+        "description":"Light Components"
+        },
+        {"imgPath":"assets/mabel/detalhe_pe.png",
+            "description":"Model detail"
+            }
+    ]
+}

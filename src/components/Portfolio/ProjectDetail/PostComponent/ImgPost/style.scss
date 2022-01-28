@@ -1,0 +1,9 @@
+@import './../../../../../variables/variables.scss';
+.post_imgPost{
+    width: 100%;
+    height: auto;
+}
+.post_description{
+    font-size: 1em;
+    color: #{$primary_dark};
+}

@@ -1,0 +1,59 @@
+@import './../../../variables/variables.scss';
+
+.project_container{
+    margin: 0;
+    width: calc(100% - $headerNav_width);
+    max-width: 800px;
+    height: 100%;
+    flex-flow: column;
+    margin:auto;
+    margin-top: 20px;
+    // border: chocolate solid 1px;
+}
+.project_container.mobile{
+    width: 90%;
+    max-width: 800px;
+    height: 100%;
+    margin: auto;
+    padding-top: 10px;
+}
+.title_project{
+    width: 100%;
+    color: #{$primary_dark};
+    font-size: 24px;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+    // margin-bottom: 40px;
+}
+.title_project span{
+    font-weight:normal;
+    font-size: 0.8em;
+}
+.project_tagCloud{
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    // justify-content: flex-start;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.project_tag{
+    background-color: $primary;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    margin:0px 5px 0px 5px;
+    color: #{$baseline_on_primary};
+}
+.project_tag:first-child{
+    margin-left: 0;
+}
+.project_description{
+    font-size: 1em;
+    color: #{$primary_dark};
+    // margin-bottom: 15px;
+}
+.project_face{
+    width: 100%;
+}
