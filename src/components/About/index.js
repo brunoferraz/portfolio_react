@@ -9,8 +9,8 @@ const About = (props)=>{
                 <p>I am currently pursuing my PhD at PUC-RJ in Computer Science in the Computer Graphics research line. I attained a Master's degree in Systems Engineering and Computing / Computer Graphics - PESC/ COPPE/ UFRJ (2017). Graduated in Industrial Design - Visual Programming from the Federal University of Rio de Janeiro (2007). I was substitute professor at ECO/ UFRJ. I have experience in Industrial Design with emphasis on Visual Programming and multimedia. I Works mainly in game development; direction, animation, storyboard creation for animated films; multimedia project management</p>
                 <div className="about_timeline">
                     <section>
-                        <h1 className="about_section_title">Academic</h1>
-                        <div className="about_yearSection">
+                        <h1 className={"about_section_title"+props.screenQuery}>Academic</h1>
+                        <div className="about_yearSection first">
                             <div className="about_yearMarker">2019 | . . . .<span>PhD</span> </div>
                             <p>PUC-RJ</p>
                             <p>Computer Graphics</p>
@@ -30,9 +30,9 @@ const About = (props)=>{
                         </div>
                     </section>
                     <section>
-                        <h1 className="about_section_title">Experience</h1>
+                        <h1 className={"about_section_title"+props.screenQuery}>Experience</h1>
                         <div className="about_yearSection">
-                            <div className="about_yearMarker">2016 | 2018<span>Substitute professor</span></div>
+                            <div className="about_yearMarker first">2016 | 2018<span>Substitute professor</span></div>
                             <p>UFRJ | ECO</p>
                             <p>I taught the following classes:</p>
                             <ul>
@@ -65,14 +65,20 @@ const About = (props)=>{
                         </div>
                     </section>
                     <section>
-                        <h1 className="about_section_title">Awards</h1>
-                        <div className="about_yearMarker">2016</div>
-                        <p>Best Animarion | Green Nation (Juri Award)</p>
-                        <p>Best Animarion | Green Nation (Audience Award)</p>
-                        <div className="about_yearMarker">2015</div>
-                        <p>Anima Multi | Animamundi (Audience Award)</p>
-                        <div className="about_yearMarker">2007</div>
-                        <p>Jornada Giulio Massarani de Iniciação Científica - CLA, UFRJ.</p>
+                        <h1 className={"about_section_title"+props.screenQuery}>Awards</h1>
+                        <div className="about_yearSection">
+                            <div className="about_yearMarker first">2016</div>
+                            <p className="not">Best Animarion | Green Nation (Juri Award)</p>
+                            <p className="not">Best Animarion | Green Nation (Audience Award)</p>
+                        </div>
+                        <div className="about_yearSection">
+                            <div className="about_yearMarker">2015</div>
+                            <p className="not">Anima Multi | Animamundi (Audience Award)</p>
+                        </div>
+                        <div className="about_yearSection">
+                            <div className="about_yearMarker">2007</div>
+                            <p className="not">Jornada Giulio Massarani de Iniciação Científica - CLA, UFRJ.</p>
+                        </div>
                     </section>
                 </div>
                 </div>
