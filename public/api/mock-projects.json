@@ -147,13 +147,25 @@
         "id": 5,
         "name": "Deu a louca no mundo",
         "year": 2019,
-        "description":"",
+        "description":"A series of attacks around the world leaves humanity in panic. The authorities take action, but in the midst of this climate of uncertainty and distrust, Helô, a member of the special mission group the Natos, disappears. Mano-Loco, with his crazy gas, goes into action and goes on a rampage around the world, driving the big celebrities crazy. Who is behind these attacks? Could The Natos stand up to so many powerful people? In this story of adventure and suspense, the reader will plunge into the world of vanity, where what counts is appearance.<br><br><p>Autor: Beto Junqueira</p><p>Editora: Estrela Cultural</p>",
         "category":["portfolio"],
-        "face":"assets/img_mundo.jpg",
+        "face":"assets/deu_louca_mundo/03_SHADING_02_Morivaldo_aviao_v7.jpg",
         "tags":["illustration", "children book"],
         "post":[
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"}
+            {"imgPath":"assets/deu_louca_mundo/03_SHADING_03_biblioteca_v2.jpg",
+                "description":""},
+            {"imgPath":"assets/deu_louca_mundo/03_SHADING_04_livroNada_v6.jpg",
+                "description":""},
+            {"imgPath":"assets/deu_louca_mundo/03_SHADING_11_bobcomendograma.jpg",
+                "description":""},
+            {"imgPath":"assets/deu_louca_mundo/03_SHADING_14_destrocos_v5.jpg",
+                "description":""},
+            {"imgPath":"assets/deu_louca_mundo/03_SHADING_15_Serenequistao_v6.jpg",
+                "description":""},
+            {"imgPath":"assets/deu_louca_mundo/03_SHADING_16_submarino_v5.jpg",
+                "description":""},
+            {"imgPath":"assets/deu_louca_mundo/03_SHADING_18_fabrica_v2.jpg",
+                "description":""}
         ]
     }
     ]
