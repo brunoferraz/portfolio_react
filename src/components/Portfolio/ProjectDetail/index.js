@@ -37,6 +37,7 @@ const ProjectDetail = (props)=>{
         }
     },[portfoliodata])
     let path = useRecoilValue(absolutPath);
+
     return(
         <Fragment>
             {
@@ -49,7 +50,7 @@ const ProjectDetail = (props)=>{
                         )}
                 </div>
                 <div className="project_description">{currentProject.description}</div>
-                <PostComponent id={id} screenQuery={props.screenQuery} />
+                {!currentProject.post?null:<PostComponent id={id} screenQuery={props.screenQuery} />}
             </div>
             }
         </Fragment>

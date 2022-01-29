@@ -8,6 +8,7 @@
     flex-flow: column;
     margin:auto;
     margin-top: 20px;
+    margin-bottom: 100px;
     // border: chocolate solid 1px;
 }
 .project_container.mobile{
@@ -52,6 +53,7 @@
 .project_description{
     font-size: 1em;
     color: #{$primary_dark};
+    line-height: 1.5em;
     // margin-bottom: 15px;
 }
 .project_face{

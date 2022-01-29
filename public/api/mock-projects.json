@@ -47,50 +47,86 @@
         "id": 1,
         "name": "Retornável",
         "year": 2015,
-        "description":"",
+        "description":"A sloppy teenager is forced to tidy up his room. However, when he chooses to do everything the easy way, he discovers that the problem doesn't end when he puts the trash in the garbage can. \n This project was one of the winners of the 'Curta animação 2013: Resíduos sólidos em um minuto' (Short animation 2013: Solid waste in a minute) and was produced with funds from MINC/SAV.",
         "category":["portfolio"],
-        "face":"assets/img_retornavel.jpg",
+        "face":"assets/retornavel/01_retornavel.jpg",
         "tags":["animation", "character design", "story board"],
         "post":[
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"},
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"},
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"},
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"},
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"},
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"}
+            {"imgPath":"assets/retornavel/character_design.jpg",
+            "description":""},
+            {"imgPath":"assets/retornavel/Post_mae.jpg",
+                "description":""},
+            {"imgPath":"assets/retornavel/postMarcas.jpg",
+                "description":""},
+            {"imgPath":"assets/retornavel/Post_Quarto.jpg",
+                "description":""},
+            {"imgPath":"assets/retornavel/plano_01_gray.jpg",
+                "description":""},
+            {"imgPath":"assets/retornavel/plano_01.jpg",
+                "description":""},
+            {"gallery":[
+                {"imgPath":"assets/retornavel/plano_02_gray.jpg",
+                "description":""},
+                {"imgPath":"assets/retornavel/plano_02.jpg",
+                "description":""}
+                ],
+                "description":"",
+                "columns":"3"
+            },
+            {"imgPath":"assets/retornavel/plano_03.jpg",
+                "description":""},
+            {"gallery":[
+                {"imgPath":"assets/retornavel/02_retornavel.jpg",
+                "description":""},
+                {"imgPath":"assets/retornavel/00_retornavel.jpg",
+                "description":""}
+                ],
+                "description":"",
+                "columns":"3"
+            },
+            {"imgPath":"assets/retornavel/CARTELAS3.jpg",
+                "description":""},
+            {"imgPath":"assets/retornavel/CARTELAS4.jpg",
+                "description":""},
+            {"gallery":[
+                {"imgPath":"assets/retornavel/CARTELAS1.jpg",
+                "description":""},
+                {"imgPath":"assets/retornavel/CARTELAS5.jpg",
+                "description":""}
+            ],
+            "description":"",
+            "columns":"3"
+            },
+            {"imgPath":"assets/retornavel/CARTAZ_V2.png",
+                "description":""}
         ]   
     },
     {
         "id": 2,
         "name": "Blue Robot",
         "year": 2021,
-        "description":"",
+        "description":"This illustration was as an exercise. It was based on the Aleck's amazing concept. I used Maya and Substance Painter",
         "category":["portfolio"],
-        "face":"assets/img_bluerobot.jpg",
+        "face":"assets/blue_robot/corte.png",
+
         "tags":["3d", "lookdev", "modeling", "rigging", "animation"],
         "post":[
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"}
+            {"imgPath":"assets/blue_robot/corte_1.png",
+            "description":""},
+            {"imgPath":"assets/blue_robot/corte_2.png",
+                "description":""},
+            {"imgPath":"assets/blue_robot/robot_beauty_fixed_new.png",
+                "description":""}
         ]
     },
     {
         "id": 3,
         "name": "Tea Time",
         "year": 2021,
-        "description":"",
+        "description":"Digital watercolor exercise",
         "category":["portfolio"],
-        "face":"assets/img_tea.jpg",
-        "tags":["digital watercolor", "illustration"],
-        "post":[
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"}
-        ]
+        "face":"assets/tea_time/tea_time.png",
+        "tags":["digital watercolor", "illustration"]
     },
     {
         "id": 4,

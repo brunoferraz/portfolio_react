@@ -4,6 +4,7 @@ import { projectList } from "../../../../atoms/projectList";
 import GalleryPost from "./GalleryPost";
 import ImgPost from "./ImgPost";
 import './style.scss';
+import VideoPost from "./VideoPost";
 
 const PostComponent = (props)=>{ 
     const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
@@ -35,6 +36,10 @@ const PostComponent = (props)=>{
             }else if(chunk.gallery!==undefined){
                 rows.push(<div className="post_component" key={counter}>
                         <GalleryPost screenQuery={props.screenQuery} gallery={chunk.gallery} description={chunk.description} columns={chunk.columns}/>
+                    </div>)
+            }else if(chunk.videoPath!==undefined){
+                rows.push(<div className="post_component" key={counter}>
+                    <VideoPost videoPath={chunk.videoPath} description={chunk.description}/>
                     </div>)
             }
         });
