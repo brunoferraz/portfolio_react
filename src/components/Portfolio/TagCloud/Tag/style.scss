@@ -13,6 +13,7 @@
 .tag:hover{
     background-color: #{$secondary}!important;
     color: #{$secondary_light} !important;
+    cursor: pointer;
 }
 .tag.unchecked{
     background-color: #{$primary};
