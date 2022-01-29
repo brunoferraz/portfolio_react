@@ -134,13 +134,29 @@
         "id": 4,
         "name": "Código camões",
         "year": 2018,
-        "description":"",
+        "description":"A headless statement by a teacher in East Timor who soon after disappears. A mysterious letter left by the poet Luís de Camões that reveals the existence of a valuable treasure hidden in Brazil. A secret code to be deciphered in the verses of The Lusiads. An object that would have magical powers, called portulabio. And a group of teenagers, The Natos, of which the reader is invited to be part. These are the ingredients for an incredible adventure through the Portuguese-speaking countries aboard the Icaro, a solar-powered seaplane. In a dispute against the ambitious businessman Jack Stress, Os Natos will do everything to prove that the Portuguese language is still alive in the four corners of the world. In this mystery-filled adventure, the reader interacts with the book to decipher the clues.<br><br><p>Autor: Beto Junqueira</p><p>Editora: Estrela Cultural</p>",
         "category":["portfolio"],
-        "face":"assets/img_camoes.jpg",
+        "face":"assets/camoes/VINHETA_13_guerrilheiros_clean_v00.jpg",
         "tags":["illustration", "children book"],
         "post":[
-            {"imgPath":"assets/img_mabel.jpg",
-            "description":"Mabel"}
+            {"imgPath":"assets/camoes/VINHETA_00a_gordo_clean_v00.jpg",
+            "description":""},
+            {"imgPath":"assets/camoes/VINHETA_00b_pedra_PNLD_clean_v00.jpg",
+                "description":""},
+            {"imgPath":"assets/camoes/VINHETA_01_objeto_clean_v01.jpg",
+            "description":""},
+            {"imgPath":"assets/camoes/VINHETA_09_mao_clean_v01.jpg",
+                "description":""},
+            {"imgPath":"assets/camoes/VINHETA_10_professora_clean_v03.jpg",
+                "description":""},
+            {"imgPath":"assets/camoes/VINHETA_11_pouso_clean_v02.jpg",
+                "description":""},
+            {"imgPath":"assets/camoes/VINHETA_16_repolho_clean_v02.jpg",
+                "description":""},
+            {"imgPath":"assets/camoes/VINHETA_17_cruzeiro_clean_v04.jpg",
+                "description":""},
+            {"imgPath":"assets/camoes/VINHETA_18_bau_clean_v00.jpg",
+                "description":""}
         ]
     },
     {
@@ -165,6 +181,49 @@
             {"imgPath":"assets/deu_louca_mundo/03_SHADING_16_submarino_v5.jpg",
                 "description":""},
             {"imgPath":"assets/deu_louca_mundo/03_SHADING_18_fabrica_v2.jpg",
+                "description":""}
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Portrait study",
+        "year": 2021,
+        "description":"Study of digital painting by timing it.",
+        "category":["study"],
+        "face":"assets/facetest_girl/Facetest_02_steps_180min.jpg",
+        "tags":["study", "digital painting"],
+        "post":[
+            {"gallery":[
+                {"imgPath":"assets/facetest_girl/Facetest_02_steps_10min.jpg",
+                "description":"10 min"},
+                {"imgPath":"assets/facetest_girl/Facetest_02_steps_30min.jpg",
+                "description":"30 min"},
+                {"imgPath":"assets/facetest_girl/Facetest_02_steps_60min.jpg",
+                "description":"60 min"},
+                {"imgPath":"assets/facetest_girl/Facetest_02_steps_90min.jpg",
+                "description":"90 min"},
+                {"imgPath":"assets/facetest_girl/Facetest_02_steps_120min.jpg",
+                "description":"120 min"},
+                {"imgPath":"assets/facetest_girl/Facetest_02_steps_180min.jpg",
+                "description":"180 min"}
+                
+            ]}
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Into the Woods",
+        "year": 2021,
+        "description":"Deep in the forest, two curious children discover a fantastic and frightening creature.<br><p>This is a collab with <a href='https://www.behance.net/antonelloisla'>Isla Antonello</a>.</p><br><p>Draw: Bruno Ferraz</p><p>Painting: Bruno Ferraz and Isla Antonello</p>",
+        "category":["study"],
+        "face":"assets/forest/forest2.jpg",
+        "tags":["collab", "watercolor"],
+        "post":[
+            {"imgPath":"assets/forest/forest1.jpg",
+                "description":""},
+            {"imgPath":"assets/forest/forest3.jpg",
+                "description":""},
+            {"imgPath":"assets/forest/forest4.jpg",
                 "description":""}
         ]
     }
