@@ -27,6 +27,8 @@ const VideoPost = (props)=>{
     const description = props.description;
     let path = useRecoilValue(absolutPath)
     // let thumb = `https://img.youtube.com/vi/${videoPath}/maxresdefault.jpg`;
+    let link = "https://www.youtube.com/embed/"+videoPath;
+    console.log(link)
     const renderVideo = () =>{
         const opts = {
             // height: '100%',
@@ -38,6 +40,9 @@ const VideoPost = (props)=>{
         };
         return <div className="youtubeVideo"><YouTube videoId={videoPath} opts={opts} /></div>;
     }
+    const renderVideoEmbed = ()=>{
+        return(<div className="youtubeVideo"><iframe width="560" height="315" src={link} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe></div>)
+    }
     const _onReady = (event) => {
         // access to player in all event handlers via event.target
         event.target.pauseVideo();
@@ -45,7 +50,7 @@ const VideoPost = (props)=>{
     // console.log(thumb.toString())
     return(
             <Fragment>
-                {renderVideo()}
+                {renderVideoEmbed()}
             </Fragment>
     )
 }

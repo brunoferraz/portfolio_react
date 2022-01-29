@@ -44,7 +44,7 @@ const ProjectDetail = (props)=>{
             <div className={"project_container"+props.screenQuery}>
                 <img src={path+currentProject.face} alt="" className="project_face" />
                 <div className="title_project">{currentProject.name} <span> | {currentProject.year}</span></div>
-                <div className="project_tagCloud">
+                <div className={"project_tagCloud"+props.screenQuery}>
                     {tags.map((tag, index) =>
                         <div key={index} className="project_tag">{tag}</div>
                         )}
