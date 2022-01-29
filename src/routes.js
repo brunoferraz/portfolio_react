@@ -14,7 +14,9 @@ const Routes = (props)=>{
                     <PortfolioScreen screenQuery={props.screenQuery} />
                 </Route>
                 <Route exact path='/home' component={HomeScreen} />
-                <Route exact path='/about' component={AboutScreen} />
+                <Route exact path='/about'>
+                    <AboutScreen screenQuery={props.screenQuery}/>
+                </Route>
                 <Route exact path='/portfolio'>
                     <PortfolioScreen screenQuery={props.screenQuery} />
                 </Route>

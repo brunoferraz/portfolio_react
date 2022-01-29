@@ -1,9 +1,12 @@
 import React, {Fragment} from "react";
+import About from "../components/About";
+import Navbar from "../components/Navbar";
 
-const AboutScreen = () =>{
+const AboutScreen = (props) =>{
     return(
         <Fragment>
-            <h1>ABOUT</h1>
+            <Navbar screenQuery={props.screenQuery}/>
+            <About screenQuery={props.screenQuery}/>
         </Fragment>
     )
 }

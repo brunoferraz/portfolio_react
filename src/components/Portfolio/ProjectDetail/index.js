@@ -5,6 +5,7 @@ import {projectList} from '../../../atoms/projectList.js';
 import './style.scss'
 import {absolutPath} from './../../../atoms/absolutePath.js';
 import PostComponent from "./PostComponent/index.js";
+import Description from "./shared/Description/index.js";
 
 
 async function getPortfolio(){
@@ -12,7 +13,6 @@ async function getPortfolio(){
     let data = await response.json();
     return data;
 }
-
 const ProjectDetail = (props)=>{
     const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
     const [currentProject, setCurrentProject] = useState([]);
@@ -49,7 +49,9 @@ const ProjectDetail = (props)=>{
                         <div key={index} className="project_tag">{tag}</div>
                         )}
                 </div>
-                <div className="project_description">{currentProject.description}</div>
+                {/* {console.log(containsHTML(currentProject.description))} */}
+                <Description className="project_description" str={currentProject.description} />
+                {/* <div className="project_description">{currentProject.description}</div> */}
                 {!currentProject.post?null:<PostComponent id={id} screenQuery={props.screenQuery} />}
             </div>
             }

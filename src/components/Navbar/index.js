@@ -6,6 +6,7 @@ import { faBehance } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { useMediaQuery } from "react-responsive";
 // import MediaQuery from 'react-responsive';
 // import MediaQuery from "react-responsive/dist/Component";
@@ -70,6 +71,7 @@ const Navbar = (props)=>{
                     <a href="https://www.behance.net/brunoferrazpro"><FontAwesomeIcon icon={faBehance} /></a>
                     <a href="https://www.instagram.com/zarrefrb/"><FontAwesomeIcon icon={faInstagram}/></a>
                     <a href="https://github.com/brunoferraz"><FontAwesomeIcon icon={faGithub}/></a>
+                    <a href="https://www.linkedin.com/in/bruno-ferraz-3a0b8081/"><FontAwesomeIcon icon={faLinkedinIn}/></a>
                 </div>
                 
             </header>
