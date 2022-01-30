@@ -49,6 +49,7 @@
     // font-size: 1.1em;
 }
 .about_section_title{
+    border-radius: 30px;
     background-color: #{$primary};
     padding: 10px;
     padding-right: 15px;
@@ -86,6 +87,10 @@ h1+div{
 .about_yearSection p:nth-child(2){
     font-weight: bold;
     // margin-left: 15px;
+}
+.about_yearSection{
+    width: 90%;
+    margin:auto;
 }
 
 .about_timeline li{

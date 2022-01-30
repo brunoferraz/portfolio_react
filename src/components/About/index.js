@@ -30,7 +30,7 @@ const About = (props)=>{
                         </div>
                     </section>
                     <section>
-                        <h1 className={"about_section_title"+props.screenQuery}>Experience</h1>
+                        <h1 className={"about_section_title"+props.screenQuery}>Work Experience</h1>
                         <div className="about_yearSection">
                             <div className="about_yearMarker first">2016 | 2018<span>Substitute professor</span></div>
                             <p>UFRJ | ECO</p>

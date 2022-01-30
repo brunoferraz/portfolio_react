@@ -7,6 +7,7 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = (props)=>{
     return(
@@ -38,6 +39,11 @@ const Contact = (props)=>{
                         <li>
                                 <a href="www.linkedin.com/in/bruno-ferraz-pro"><FontAwesomeIcon icon={faLinkedinIn}/></a>                            
                                 <a href="www.linkedin.com/in/bruno-ferraz-pro">bruno-ferraz-pro</a>
+
+                        </li>
+                        <li>
+                            <a href="mailto:brunoferraz.pro@gmail.com" target="_blank"><FontAwesomeIcon icon={faWhatsapp}/></a>                            
+                            <a href="mailto:brunoferraz.pro@gmail.com" target="_blank">Ask me by email  ; )</a>
 
                         </li>
                     </ul>
