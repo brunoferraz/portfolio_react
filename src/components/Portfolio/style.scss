@@ -23,6 +23,13 @@
 .gallery{
     width: 95%;
     align-self: center;
+    -webkit-column-count: 4;
+    /* -webkit-column-gap: 0px; */
+    -moz-column-count: 4;
+    /* -moz-column-gap: 0px; */
+    column-count: 4;
+    column-gap: 10px;
+    // border: steelblue solid 1px;
     // border: steelblue solid 1px;
 }
 .gallery.threeColumn{

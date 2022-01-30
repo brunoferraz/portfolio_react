@@ -20,7 +20,9 @@ const Routes = (props)=>{
                 <Route exact path='/portfolio'>
                     <PortfolioScreen screenQuery={props.screenQuery} />
                 </Route>
-                <Route exact path='/contact' component={ContactScreen} />
+                <Route exact path='/contact'>
+                    <ContactScreen  screenQuery={props.screenQuery} />
+                </Route>
                 <Route exact path='/project/:id'>
                     <ProjectScreen  screenQuery={props.screenQuery}/>
                 </Route>

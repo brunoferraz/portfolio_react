@@ -1,9 +1,13 @@
 import React, {Fragment} from "react";
+import Contact from "../components/Contact";
+import Navbar from "../components/Navbar";
 
-const ContactScreen = () =>{
+
+const ContactScreen = (props) =>{
     return(
         <Fragment>
-            <h1>CONTACT</h1>
+            <Navbar screenQuery={props.screenQuery} />
+            <Contact screenQuery={props.screenQuery} />
         </Fragment>
     )
 }
