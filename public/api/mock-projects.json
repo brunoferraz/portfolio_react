@@ -107,7 +107,7 @@
         "id": 2,
         "name": "Blue Robot",
         "year": 2021,
-        "description":"This illustration was as an exercise. It was based on the <a href='https://www.instagram.com/p/CGOil-ujr6s/'>Aleck</a>'s amazing concept. I used Maya and Substance Painter",
+        "description":"This illustration was an exercise. It was based on the <a href='https://www.instagram.com/p/CGOil-ujr6s/'>Aleck</a>'s amazing concept. I used Maya and Substance Painter",
         "category":["portfolio"],
         "face":"assets/blue_robot/corte.png",
 
@@ -213,10 +213,10 @@
     {
         "id": 7,
         "name": "Into the Woods",
-        "year": 2021,
+        "year": 2022,
         "description":"Deep in the forest, two curious children discover a fantastic and frightening creature.<br><p>This is a collab with <a href='https://www.behance.net/islaantonello2/'>Isla Antonello</a>.</p><br><p>Draw: Bruno Ferraz</p><p>Painting: Bruno Ferraz and Isla Antonello</p>",
         "category":["study"],
-        "face":"assets/forest/forest2.jpg",
+        "face":"assets/forest/forest1.jpg",
         "tags":["collab", "watercolor"],
         "post":[
             {"imgPath":"assets/forest/forest1.jpg",
@@ -225,6 +225,64 @@
                 "description":""},
             {"imgPath":"assets/forest/forest4.jpg",
                 "description":""}
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Landscape study",
+        "year": 2021,
+        "description":"Study of digital painting by timing it.",
+        "category":["study"],
+        "face":"assets/landscape_study/landscape_210min.jpg",
+        "tags":["study", "digital painting"],
+        "post":[
+            {"gallery":[
+                {"imgPath":"assets/landscape_study/landscape_1min.jpg",
+                "description":"1 min"},
+                {"imgPath":"assets/landscape_study/landscape_30min.jpg",
+                "description":"30 min"},
+                {"imgPath":"assets/landscape_study/landscape_90min.jpg",
+                "description":"90 min"},
+                {"imgPath":"assets/landscape_study/landscape_150min.jpg",
+                "description":"150 min"},
+                {"imgPath":"assets/landscape_study/landscape_210min.jpg",
+                "description":"120 min"}
+            ]}
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Cholita Adventurer",
+        "year": 2021,
+        "description":"This was my entry for December 2021 Character Design Challenge",
+        "category":["study"],
+        "face":"assets/cholita/cholita_cena_v13.jpg",
+        "tags":["study", "digital painting", "character design"],
+        "post":[
+            {"gallery":[
+                {"imgPath":"assets/cholita/cholita_v0.jpg",
+                "description":""},
+                {"imgPath":"assets/cholita/cholita_v1.jpg",
+                "description":""},
+                {"imgPath":"assets/cholita/cholita_v2.jpg",
+                "description":""}
+            ]},
+            {"gallery":[
+                {"imgPath":"assets/cholita/cholita_v3.jpg",
+                "description":""},
+                {"imgPath":"assets/cholita/cholita_v4.jpg",
+                "description":""},
+                {"imgPath":"assets/cholita/cholita_v5.jpg",
+                "description":""}
+            ]},
+            {"gallery":[
+                {"imgPath":"assets/cholita/cholita_v6.jpg",
+                "description":""},
+                {"imgPath":"assets/cholita/cholita_v8.jpg",
+                "description":""},
+                {"imgPath":"assets/cholita/cholita_v9.jpg",
+                "description":""}
+            ]}
         ]
     }
     ]

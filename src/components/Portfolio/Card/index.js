@@ -2,20 +2,6 @@ import React from "react";
 import './style.scss'
 import { Link } from "react-router-dom";
 
-// const Card = (props) =>{ 
-//     const myref = React.createRef(this);
-//     console.log(myref)
-//     if(props.states===" disable")return null
-//     return(
-//         <div key={props.index} className={"card"+props.state + props.screenQuery} >
-//             <div className="overlay"></div>
-//             <div className="img_box">
-//                 <img alt="" key={props.index} src={props.face} />
-//             </div>
-//         </div>
-//     )
-// }
-
 class Card extends React.Component{
     constructor(props){
         super(props);
