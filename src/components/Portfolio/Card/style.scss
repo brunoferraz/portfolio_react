@@ -31,18 +31,20 @@
     left: 0;
     background:rgba($secondary, $alpha: 0.0);
 }
-.card:hover{
-    transition: 0.1s;
-    // transform:scale(1.01);
-    // clip-path: circle(100px at center);
-}
-.card:hover .img_box{
-    filter: grayscale(1);
-}
-.card:hover .overlay{
-    transition: 0.1s;
-    background:rgba($secondary, $alpha: 0.5);
-    // clip-path: circle(100px at center);
+@media(hover: hover) and (pointer: fine){
+    .card:hover{
+        transition: 0.1s;
+        // transform:scale(1.01);
+        // clip-path: circle(100px at center);
+    }
+    .card:hover .img_box{
+        filter: grayscale(1);
+    }
+    .card:hover .overlay{
+        transition: 0.1s;
+        background:rgba($secondary, $alpha: 0.5);
+        // clip-path: circle(100px at center);
+    }
 }
 .bar{
     background-color: $secondary;
@@ -60,9 +62,11 @@
     transform: scaleY(0);
     transform-origin: bottom;
 }
-.card:hover .bar{
-    transition: 0.2s;
-    transform: scaleY(1);
+@media(hover: hover) and (pointer: fine){
+    .card:hover .bar{
+        transition: 0.2s;
+        transform: scaleY(1);
+    }
 }
 .bar p {
     margin-right: 30px;

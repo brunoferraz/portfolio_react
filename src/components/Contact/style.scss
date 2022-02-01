@@ -52,12 +52,14 @@
 .contact_box li a:first-child{
     color: #{$primary_dark};
 }
-.contact_box li:hover > a{
-    color:#{$secondary};
-}
-.contact_box li:hover > a:nth-child(2){
-    background-color: #{$secondary};
-    color:#{$baseline_on_secondary};
+@media(hover: hover) and (pointer: fine){
+    .contact_box li:hover > a{
+        color:#{$secondary};
+    }
+    .contact_box li:hover > a:nth-child(2){
+        background-color: #{$secondary};
+        color:#{$baseline_on_secondary};
+    }
 }
 .contact_box li a:nth-child(2){
     width: 100% !important;

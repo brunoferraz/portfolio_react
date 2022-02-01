@@ -39,9 +39,11 @@
     display: block;
     color: #{$primary_dark};
 }
+@media(hover: hover) and (pointer: fine){
 .navBar a:hover{
     background-color:#{$secondary};
     color: #{$baseline_on_secondary};
+}
 }
 .socialNetworkBar{
     width: 150px;
@@ -59,10 +61,12 @@
     vertical-align: middle;
     line-height: 30px;
 }
-.socialNetworkBar a:hover{
-    border-radius: 15px;
-    background-color:#{$secondary};
-    color: #{$baseline_on_secondary};
+@media(hover: hover) and (pointer: fine){
+    .socialNetworkBar a:hover{
+        border-radius: 15px;
+        background-color:#{$secondary};
+        color: #{$baseline_on_secondary};
+    }
 }
 ////////////////////////////////////////////////////////////
 // MOBILE
@@ -95,8 +99,10 @@
     border-radius: 15px;
     background-color: #{$baseline_on_primary};
 }
-.burguermenu:hover div{
-    background-color: #{$secondary};
+@media(hover: hover) and (pointer: fine){
+    .burguermenu:hover div{
+        background-color: #{$secondary};
+    }
 }
 .brand.mobile{
     display: none;

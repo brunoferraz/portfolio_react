@@ -10,11 +10,6 @@
     background-color: #{$primary};
     color: #{$primary_dark};
 }
-.tag:hover{
-    background-color: #{$secondary}!important;
-    color: #{$secondary_light} !important;
-    cursor: pointer;
-}
 .tag.unchecked{
     background-color: #{$primary};
     color: #{$primary_dark};
@@ -22,4 +17,11 @@
 .tag.checked{
     background-color: #{$secondary};
     color: #{$baseline_on_secondary};
+}
+@media(hover: hover) and (pointer: fine){
+    .tag:hover{
+        background-color: #{$secondary};
+        color: #{$secondary_light};
+        cursor: pointer;
+    }
 }

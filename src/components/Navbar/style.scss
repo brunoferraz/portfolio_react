@@ -24,7 +24,13 @@
     align-self: center;
     color: #{$baseline_on_primary};
     font-size: 2em;
-
+}
+.title a{
+    color: #{$baseline_on_primary};
+}
+.title a:hover{
+    // color: #{$secondary};
+    // font-weight: bold;
 }
 .navBar{
     margin-top: 5%;
@@ -51,7 +57,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: auto;
-    margin-bottom: 5%;
+    margin-bottom: 15%;
 }
 .socialNetworkBar a{
 
@@ -87,6 +93,7 @@
     display: block;
 }
 .burguermenu{
+    cursor: pointer;
     display: flex;
     width: 30px;
     height: 20px;
@@ -102,6 +109,11 @@
     border-radius: 15px;
     background-color: #{$baseline_on_primary};
 }
+.burguermenu:hover{
+    cursor: pointer;
+}
+
+
 .burguermenu:hover div{
     background-color: #{$secondary};
 }
@@ -120,6 +132,7 @@
 .navBar.mobile a{
     padding-left: 0;
     text-align: center;
+    padding: 20px 0px 20px 0px;
 }
 .navBar.mobile.barUnfolded{
     display: block;
@@ -132,8 +145,12 @@
     position:absolute;
     bottom: 15px;
     margin: auto;
-    transition:0.3s;
+    // transition:0.1s;
     left: calc(50% - 50px);
+}
+.socialNetworkBar.mobile.barUnfolded{
+    bottom: -30px;
+    left: calc(50% - 80px);
 }
 .socialNetworkBar.mobile.twoColumn{
     transition:0.3s;

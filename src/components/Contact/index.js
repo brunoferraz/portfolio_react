@@ -8,6 +8,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import GoBackButton from "../shared/GoBackButton";
 
 const Contact = (props)=>{
     return(
@@ -43,11 +44,12 @@ const Contact = (props)=>{
                         </li>
                         <li>
                             <a href="mailto:brunoferraz.pro@gmail.com" target="_blank"><FontAwesomeIcon icon={faWhatsapp}/></a>                            
-                            <a href="mailto:brunoferraz.pro@gmail.com" target="_blank">Ask me by email  ; )</a>
+                            <a href="mailto:brunoferraz.pro@gmail.com" target="_blank">Ask me by e-mail  ; )</a>
 
                         </li>
                     </ul>
                 </div>
+                <GoBackButton/>
             </div>
         </Fragment>
     )

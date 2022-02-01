@@ -6,7 +6,8 @@ import './style.scss';
 const GalleryPost = (props)=>{
     const gallery = props.gallery;
     const description = props.description;
-    let path = useRecoilValue(absolutPath)
+    // let path = useRecoilValue(absolutPath)
+    let path = "./../";
 
     const hasdescription = (classVar, desc)=>{
         if(desc==='') return null
@@ -19,11 +20,10 @@ const GalleryPost = (props)=>{
             <div className={"post_gallery"+props.screenQuery}>
                 {gallery.map((item, index)=>
                     <div key={index} className={"post_gallery_item"+props.screenQuery}>
-                        <img src={path+item.imgPath}/>
+                        <img alt={item.description} src={path+item.imgPath}/>
                         {hasdescription("gallery_item_description"+props.screenQuery ,item.description)}
                     </div>
                     )}
-                
             </div>
         </Fragment>
     )

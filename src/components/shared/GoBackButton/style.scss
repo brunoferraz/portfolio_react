@@ -1,0 +1,35 @@
+@import './../../../variables/variables.scss';
+
+.shared_backButton {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.shared_backButton div{
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    width: 30%;
+    height: 30px;
+    border-radius: 25px;
+
+    font-size: 1em;
+    line-height: 30px;
+
+    margin: auto;
+    padding: 5px 15px;
+
+    background-color: #{$primary};
+    color: #{$primary_dark};
+}
+
+@media(hover: hover) and (pointer: fine){
+    .shared_backButton div:hover{
+        background-color: #{$secondary};
+        color: #{$baseline_on_secondary};
+    }
+}
+.backButton:active{
+    background-color: #{$secondary};
+    color: #{$baseline_on_secondary};
+}

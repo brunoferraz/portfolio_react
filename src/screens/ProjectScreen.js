@@ -5,7 +5,7 @@ import ProjectDetail from "../components/Portfolio/ProjectDetail"
 const ProjectScreen = (props) =>{
     return(
         <Fragment>
-            <Navbar screenQuery={props.screenQuery}/>
+            <Navbar pathAdjustment="./../" screenQuery={props.screenQuery}/>
             <ProjectDetail  screenQuery={props.screenQuery} />
         </Fragment>
     )

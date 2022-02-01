@@ -6,10 +6,11 @@ import './style.scss';
 const ImgPost = (props)=>{
     const imgPath = props.imgPath;
     const description = props.description;
-    let path = useRecoilValue(absolutPath)
+    // let path = useRecoilValue(absolutPath)
+    let path = "./../"
     return(
         <Fragment>
-            <img className="post_imgPost" src={path+imgPath}/>
+            <img alt={description} className="post_imgPost" src={path+imgPath}/>
             <div className="post_description">{description}</div>
         </Fragment>
     )

@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import GoBackButton from "../shared/GoBackButton";
 import './style.scss'
 const About = (props)=>{
     return(
@@ -31,7 +32,7 @@ const About = (props)=>{
                     </section>
                     <section>
                         <h1 className={"about_section_title"+props.screenQuery}>Work Experience</h1>
-                        <div className="about_yearSection">
+                        <div className="about_yearSection first">
                             <div className="about_yearMarker first">2016 | 2018<span>Substitute professor</span></div>
                             <p>UFRJ | ECO</p>
                             <p>I taught the following classes:</p>
@@ -58,7 +59,7 @@ const About = (props)=>{
                             </ul>
                         </div>
                         <div className="about_yearSection">
-                            <div className="about_yearMarker">2006 | 2007<span>Treinee</span></div>
+                            <div className="about_yearMarker">2006 | 2007<span>Trainee</span></div>
                             <p>Labareda Design</p>
                             <p>Design</p>
                             
@@ -66,7 +67,7 @@ const About = (props)=>{
                     </section>
                     <section>
                         <h1 className={"about_section_title"+props.screenQuery}>Awards</h1>
-                        <div className="about_yearSection">
+                        <div className="about_yearSection first">
                             <div className="about_yearMarker first">2016</div>
                             <p className="not">Best Animarion | Green Nation (Juri Award)</p>
                             <p className="not">Best Animarion | Green Nation (Audience Award)</p>
@@ -82,6 +83,7 @@ const About = (props)=>{
                     </section>
                 </div>
                 </div>
+                <GoBackButton/>
             </div>
         </Fragment>
     )

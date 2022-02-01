@@ -8,7 +8,7 @@
     flex-flow: column;
     margin:auto;
     margin-top: 20px;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
     // border: chocolate solid 1px;
 }
 .project_container.mobile{
@@ -17,7 +17,7 @@
     height: 100%;
     margin: auto;
     padding-top: 10px;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
 }
 .title_project{
     width: 100%;
@@ -63,4 +63,36 @@
 }
 .project_face{
     width: 100%;
+}
+.project_backButton {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.project_backButton div{
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    width: 30%;
+    height: 30px;
+    border-radius: 25px;
+
+    font-size: 1em;
+    line-height: 30px;
+
+    margin: auto;
+    padding: 5px 15px;
+
+    background-color: #{$primary};
+    color: #{$primary_dark};
+}
+@media(hover: hover) and (pointer: fine){
+    .project_backButton div:hover{
+        background-color: #{$secondary};
+        color: #{$baseline_on_secondary};
+    }
+}
+.project_backButton:active{
+    background-color: #{$secondary};
+    color: #{$baseline_on_secondary};
 }

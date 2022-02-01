@@ -6,37 +6,61 @@ import './style.scss'
 import {absolutPath} from './../../../atoms/absolutePath.js';
 import PostComponent from "./PostComponent/index.js";
 import Description from "./shared/Description/index.js";
+import GoBackButton from "../../shared/GoBackButton/index.js";
 
 
 async function getPortfolio(){
-    let response = await fetch("http://localhost:3000/api/mock-projects.json");
+    let response = await fetch("./../api/mock-projects.json");
     let data = await response.json();
     return data;
 }
 const ProjectDetail = (props)=>{
     const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
     const [currentProject, setCurrentProject] = useState([]);
+    const [redirect, setRedirect] = useState(false);
     const [tags, getTags] = useState([]);
     let { id } = useParams();
     let history = useHistory();
 
     useEffect(() =>{
-        if(portfoliodata[id]===undefined){
+            // console.log(portfoliodata)
+        if(portfoliodata.length===0){
             getPortfolio().then((data)=>{
                 setPortfolioData(data["projects"])
-            })
+                if(id>portfoliodata.length || isNaN(id)){
+                    //baixou os dados mas nao tem o projeto solicitado
+                    setRedirect(true);
+                }
+            }, error=>{
+                setRedirect(true);
+            }
+            )
         }else{
+            
             setCurrentProject(portfoliodata[id])
             getTags([...portfoliodata[id].tags])
         }
     },[id])
     useEffect(() =>{
         if(portfoliodata.length!==0){
-            setCurrentProject(portfoliodata[id])
-            getTags([...portfoliodata[id].tags])
+            if(id>portfoliodata.length || isNaN(id)){
+                //baixou os dados mas nao tem o projeto solicitado
+                setRedirect(true);
+            }else{
+                setCurrentProject(portfoliodata[id])
+                getTags([...portfoliodata[id].tags])
+            }
         }
     },[portfoliodata])
-    let path = useRecoilValue(absolutPath);
+    // let path = useRecoilValue(absolutPath);
+    let path = "./../"
+    const goBack = ()=>{
+        history.push("/")
+    }
+    
+    if(redirect){
+        return <Redirect to='/' />
+    }
 
     return(
         <Fragment>
@@ -53,6 +77,12 @@ const ProjectDetail = (props)=>{
                 <Description className="project_description" str={currentProject.description} />
                 {/* <div className="project_description">{currentProject.description}</div> */}
                 {!currentProject.post?null:<PostComponent id={id} screenQuery={props.screenQuery} />}
+                {/* <div className="project_backButton">
+                    <div onClick={goBack}>
+                    back
+                    </div>
+                </div> */}
+                <GoBackButton></GoBackButton>
             </div>
             }
         </Fragment>

@@ -19,6 +19,7 @@ const Navbar = (props)=>{
     const [barState, setBarFoldState] = useState(barFolded); 
     let screenQuery = props.screenQuery;
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1060px)' })
+    const pathAdjustment = (props.pathAdjustment===undefined)? "./" : props.pathAdjustment;
     // let screenQuery = "";
     // if(isTabletOrMobile) {
     //     screenQuery = " mobile"
@@ -58,8 +59,8 @@ const Navbar = (props)=>{
     return(
         <div className={"header_Container"+screenQuery+barState}>
             <header className={"header"+screenQuery+barState}>
-                <img className={"brand"+screenQuery} alt="Meu avatar" src={"http://localhost:3000/assets/avatar.png"}/>
-                <div className={"title"+screenQuery}>Bruno Ferraz</div>
+                <img className={"brand"+screenQuery} alt="Meu avatar" src={pathAdjustment+"assets/avatar.png"}/>
+                <div className={"title"+screenQuery}><Link to="/" > Bruno Ferraz </Link></div>
                 {burgermenu()}
                 <nav className={"navBar"+screenQuery+barState}>
                     <Link to="/about">About</Link>

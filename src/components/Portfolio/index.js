@@ -9,7 +9,8 @@ import { projectsState } from './../../atoms/projectsStates';
 
 
 async function getPortfolio(){
-    let response = await fetch("http://localhost:3000/api/mock-projects.json");
+    // let response = await fetch("http://localhost:3000/api/mock-projects.json");
+    let response = await fetch("./../api/mock-projects.json");
     let data = await response.json();
     return data;
 }
