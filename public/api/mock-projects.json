@@ -128,7 +128,7 @@
         "description":"Digital watercolor exercise",
         "category":["portfolio"],
         "face":"assets/tea_time/tea_time.png",
-        "tags":["digital watercolor", "illustration"]
+        "tags":["digital", "watercolor", "illustration"]
     },
     {
         "id": 4,
@@ -191,7 +191,7 @@
         "description":"Study of digital painting by timing it.",
         "category":["study"],
         "face":"assets/facetest_girl/Facetest_02_steps_180min.jpg",
-        "tags":["study", "digital painting"],
+        "tags":["study", "digital", "painting"],
         "post":[
             {"gallery":[
                 {"imgPath":"assets/facetest_girl/Facetest_02_steps_10min.jpg",
@@ -234,7 +234,7 @@
         "description":"Study of digital painting by timing it.",
         "category":["study"],
         "face":"assets/landscape_study/landscape_210min.jpg",
-        "tags":["study", "digital painting"],
+        "tags":["study", "digital", "painting"],
         "post":[
             {"gallery":[
                 {"imgPath":"assets/landscape_study/landscape_1min.jpg",
@@ -257,7 +257,7 @@
         "description":"This was my entry for December 2021 Character Design Challenge",
         "category":["study"],
         "face":"assets/cholita/cholita_cena_v13.jpg",
-        "tags":["study", "digital painting", "character design"],
+        "tags":["study", "digital", "painting", "character design"],
         "post":[
             {"gallery":[
                 {"imgPath":"assets/cholita/cholita_v0.jpg",

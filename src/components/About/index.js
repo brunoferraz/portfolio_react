@@ -7,7 +7,31 @@ const About = (props)=>{
             <div className={"about_container"+props.screenQuery}>
                 <div className={"about"+props.screenQuery}>
                 <div className="about_title">About</div>
-                <p>I am currently pursuing my PhD at PUC-RJ in Computer Science in the Computer Graphics research line. I attained a Master's degree in Systems Engineering and Computing / Computer Graphics - PESC/ COPPE/ UFRJ (2017). Graduated in Industrial Design - Visual Programming from the Federal University of Rio de Janeiro (2007). I was substitute professor at ECO/ UFRJ. I have experience in Industrial Design with emphasis on Visual Programming and multimedia. I Works mainly in game development; direction, animation, storyboard creation for animated films; multimedia project management</p>
+                <p>I am currently pursuing my Ph.D. at PUC-RJ in Computer Science in the Computer Graphics research line. I attained a Master's degree in Systems Engineering and Computing / Computer Graphics - PESC/ COPPE/ UFRJ (2017). Graduated in Industrial Design - Visual Programming from the Federal University of Rio de Janeiro (2007). I was a substitute Professor at ECO/ UFRJ. I have experience in Design with an emphasis on visual programming and multimedia. </p>
+                    <p>I mainly work with:</p>
+                <ul>
+                    <li>
+                        -multimedia project management
+                    </li>
+                    <li>
+                        -illustration
+                    </li>
+                    <li>
+                        -storyboard
+                    </li>
+                    <li>
+                        -animated movie direction
+                    </li>
+                    <li>
+                        -animation
+                    </li>
+                    <li>
+                        -game development
+                    </li>
+                    <li>
+                        -game design
+                    </li>
+                </ul>
                 <div className="about_timeline">
                     <section>
                         <h1 className={"about_section_title"+props.screenQuery}>Academic</h1>
@@ -37,7 +61,7 @@ const About = (props)=>{
                             <p>UFRJ | ECO</p>
                             <p>I taught the following classes:</p>
                             <ul>
-                                <li>- graphic computer</li>
+                                <li>- computer graphics</li>
                                 <li>- media production technology</li>
                                 <li>- webdesign</li>
                                 <li>- animation</li>

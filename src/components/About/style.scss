@@ -8,6 +8,7 @@
     width: 90%;
     margin: auto;
 }
+
 .about{
     max-width: 800px;
     flex-flow: column;
@@ -15,6 +16,14 @@
     margin-top: 20px;
     margin-bottom: 100px;
     color: #{$primary_dark};
+}
+.about ul {
+    // display: flex;
+    margin-top: 10px;
+}
+.about li{
+    margin-left: 30px;
+    line-height: 1.5em;
 }
 .about.twoColumn{
     width: 70%;
@@ -100,6 +109,7 @@ h1+div{
 
 .about_timeline li{
     margin-left: 100px;
+    line-height: 1.5em;
 }
 .not{
     font-weight: normal !important;
