@@ -5,7 +5,6 @@ import './style.scss'
 const About = (props)=>{
     return(
         <Fragment>
-            <ScrollToTop/>
             <div className={"about_container"+props.screenQuery}>
                 <div className={"about"+props.screenQuery}>
                 <div className="about_title">About</div>
@@ -111,6 +110,7 @@ const About = (props)=>{
                 </div>
                 <GoBackButton/>
             </div>
+            <ScrollToTop/>
         </Fragment>
     )
 }

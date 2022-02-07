@@ -3,6 +3,7 @@ import Routes from "./routes";
 import "./App.css";
 import { useMediaQuery } from "react-responsive";
 import { RecoilRoot } from "recoil";
+import ScrollToTop from "./components/shared/ScrollToTop";
 
 function App() {
   const oneColumn  = useMediaQuery({ query: '(max-width: 660px)' })
@@ -22,6 +23,7 @@ function App() {
     <RecoilRoot>
       <div className={"App"+screenQuery}>
         <Routes screenQuery={screenQuery} ></Routes>
+        
       </div>
     </RecoilRoot>
   );

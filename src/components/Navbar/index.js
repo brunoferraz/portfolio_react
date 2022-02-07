@@ -74,7 +74,6 @@ const Navbar = (props)=>{
                     <a href="https://github.com/brunoferraz"><FontAwesomeIcon icon={faGithub}/></a>
                     <a href="https://www.linkedin.com/in/bruno-ferraz-pro"><FontAwesomeIcon icon={faLinkedinIn}/></a>
                 </div>
-                
             </header>
         </div>
     )

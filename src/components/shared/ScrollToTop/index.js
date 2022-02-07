@@ -7,8 +7,10 @@ export default function ScrollToTop() {
   const routePath = useLocation();
   const onTop = () => {
     window.scrollTo(0, 0);
+    // alert("subindo")
   }
   useEffect(() => {
+    //   console.log(routePath)
     onTop()
   }, [routePath]);
   
