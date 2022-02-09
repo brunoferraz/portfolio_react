@@ -14,6 +14,11 @@ async function getPortfolio(){
     let data = await response.json();
     return data;
 }
+async function getProject(projid){
+    let response = await fetch(`./../api/${projid}.json`);
+    let data = await response.json();
+    return data;
+}
 const ProjectDetail = (props)=>{
     const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
     const [currentProject, setCurrentProject] = useState([]);
