@@ -37,7 +37,7 @@ const TagCloud = (props) => {
             mapprojects[tag] = []
             portfoliodata.forEach(proj => {
                 if(proj.tags.indexOf(tag) !== -1){
-                    mapprojects[tag].push([proj.id, proj.name])
+                    mapprojects[tag].push([Number(proj.id), proj.name])
                 }
             })
         })

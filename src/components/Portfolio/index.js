@@ -6,6 +6,7 @@ import TagCloud from "./TagCloud";
 import { useRecoilState } from "recoil";
 import { projectList } from "./../../atoms/projectList";
 import { projectsState } from './../../atoms/projectsStates';
+import { currentProjectAtom } from "../../atoms/currentProject";
 
 
 async function getPortfolio(){
@@ -20,11 +21,14 @@ const Portfolio = (props) =>{
     const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
     const [projectsStatesList, setProjectsStates] = useRecoilState(projectsState);
     const [listprojects, setListProjects] = useState([]);
+    const [currentProject, setCurrentProject] = useRecoilState(currentProjectAtom);
 
 
     useEffect(() =>{
         getPortfolio().then((data)=>{
-            setPortfolioData(data["projects"])
+            setPortfolioData(data["projects"]);
+            //zera o current project
+            setCurrentProject([])
         })
     },[])
     useEffect(()=>{
@@ -67,10 +71,18 @@ const Portfolio = (props) =>{
     }
     const renderOrder_random = () =>{
         return(listprojects.map((id, index)=>
-        {let proj = portfoliodata[id];
-            return(<Card key={index} face={proj.face} name={proj.name} id={proj.id} state={projectsStatesList[proj.id]} screenQuery={props.screenQuery} />)
+        {let proj = portfoliodata[index];
+            return(<Card key={index} face={proj.face} name={proj.name} id={proj.id} state={projectsStatesList[Number(proj.id)]} screenQuery={props.screenQuery} />)
         })
     )
+    }
+    const newrenderOrder = () =>{
+        return(
+            listprojects.map((id, index)=>
+            {
+                // let
+            })
+        )
     }
     return(
         <Fragment>
@@ -82,6 +94,7 @@ const Portfolio = (props) =>{
                         {
                             renderOrder_random()
                             // renderOrder_linear()
+                            // newrenderOrder()
                         }
                     </div>
                 </div>
