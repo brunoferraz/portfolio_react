@@ -7,6 +7,7 @@ import {absolutPath} from './../../../atoms/absolutePath.js';
 import PostComponent from "./PostComponent/index.js";
 import Description from "./shared/Description/index.js";
 import GoBackButton from "../../shared/GoBackButton/index.js";
+import { currentProjectAtom } from "../../../atoms/currentProject.js";
 
 
 async function getProject(projid){
@@ -16,7 +17,7 @@ async function getProject(projid){
 }
 const ProjectDetail = (props)=>{
     const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
-    const [currentProject, setCurrentProject] = useState([]);
+    const [currentProject, setCurrentProject] = useRecoilState(currentProjectAtom);
     const [redirect, setRedirect] = useState(false);
     const [tags, getTags] = useState([]);
     let { id } = useParams();
@@ -31,7 +32,6 @@ const ProjectDetail = (props)=>{
             setRedirect(true);
         })
     },[id])
-    // let path = useRecoilValue(absolutPath);
     let path = "./../"
     const goBack = ()=>{
         history.push("/")

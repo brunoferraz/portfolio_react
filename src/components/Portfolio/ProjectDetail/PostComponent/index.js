@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { projectList } from "../../../../atoms/projectList";
+import { currentProjectAtom } from "../../../../atoms/currentProject";
 import GalleryPost from "./GalleryPost";
 import ImgPost from "./ImgPost";
 import './style.scss';
@@ -8,21 +9,13 @@ import VideoPost from "./VideoPost";
 
 const PostComponent = (props)=>{ 
     const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
-    const [currentProject, setCurrentProject] = useState([]);
+    // const [currentProject, setCurrentProject] = useRecoilState([]);
     const [post, setPost] = useState([]);
+    const currentProject = useRecoilValue(currentProjectAtom);
     useEffect(()=>{
-        if(portfoliodata.length!==0){
-            setCurrentProject(portfoliodata[props.id])
-        }
-    },[props.id, portfoliodata])
-    useEffect(()=>{
-        if(currentProject.length!==0){
-            setPost(currentProject.post)
-        }
+        setPost(currentProject.post)
     },[currentProject])
-    useEffect(()=>{
-        // console.log(post)
-    },[post])
+
     const preparaRender =() =>{
         if(post.length===0) {return null}
         let rows = [];
@@ -43,7 +36,6 @@ const PostComponent = (props)=>{
                     </div>)
             }
         });
-        // console.log(post[0])
         return rows;
     }
     return(
