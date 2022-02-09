@@ -1,0 +1,35 @@
+{
+    "id": "009",
+    "name": "Cholita Adventurer",
+    "year": 2021,
+    "description":"This was my entry for December 2021 Character Design Challenge",
+    "category":["study"],
+    "face":"assets/cholita/cholita_cena_v13.jpg",
+    "tags":["study", "digital", "painting", "character design"],
+    "post":[
+        {"gallery":[
+            {"imgPath":"assets/cholita/cholita_v0.jpg",
+            "description":""},
+            {"imgPath":"assets/cholita/cholita_v1.jpg",
+            "description":""},
+            {"imgPath":"assets/cholita/cholita_v2.jpg",
+            "description":""}
+        ]},
+        {"gallery":[
+            {"imgPath":"assets/cholita/cholita_v3.jpg",
+            "description":""},
+            {"imgPath":"assets/cholita/cholita_v4.jpg",
+            "description":""},
+            {"imgPath":"assets/cholita/cholita_v5.jpg",
+            "description":""}
+        ]},
+        {"gallery":[
+            {"imgPath":"assets/cholita/cholita_v6.jpg",
+            "description":""},
+            {"imgPath":"assets/cholita/cholita_v8.jpg",
+            "description":""},
+            {"imgPath":"assets/cholita/cholita_v9.jpg",
+            "description":""}
+        ]}
+    ]
+}

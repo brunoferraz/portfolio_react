@@ -1,0 +1,23 @@
+{
+    "id": "008",
+    "name": "Landscape study",
+    "year": 2021,
+    "description":"Study of digital painting by timing it.",
+    "category":["study"],
+    "face":"assets/landscape_study/landscape_210min.jpg",
+    "tags":["study", "digital", "painting"],
+    "post":[
+        {"gallery":[
+            {"imgPath":"assets/landscape_study/landscape_1min.jpg",
+            "description":"1 min"},
+            {"imgPath":"assets/landscape_study/landscape_30min.jpg",
+            "description":"30 min"},
+            {"imgPath":"assets/landscape_study/landscape_90min.jpg",
+            "description":"90 min"},
+            {"imgPath":"assets/landscape_study/landscape_150min.jpg",
+            "description":"150 min"},
+            {"imgPath":"assets/landscape_study/landscape_210min.jpg",
+            "description":"120 min"}
+        ]}
+    ]
+}

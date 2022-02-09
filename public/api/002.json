@@ -1,0 +1,18 @@
+{
+    "id": "002",
+    "name": "Blue Robot",
+    "year": 2021,
+    "description":"This illustration was an exercise. It was based on the <a href='https://www.instagram.com/p/CGOil-ujr6s/'>Aleck</a>'s amazing concept. I used Maya and Substance Painter",
+    "category":["portfolio"],
+    "face":"assets/blue_robot/corte.png",
+
+    "tags":["3d", "lookdev", "modeling", "rigging", "animation"],
+    "post":[
+        {"imgPath":"assets/blue_robot/corte_1.png",
+        "description":""},
+        {"imgPath":"assets/blue_robot/corte_2.png",
+            "description":""},
+        {"imgPath":"assets/blue_robot/robot_beauty_fixed_new.png",
+            "description":""}
+    ]
+}

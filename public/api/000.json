@@ -1,26 +1,43 @@
 {
+    "id": "000",
+    "name": "Mabel",
+    "year": 2021,
+    "description":"Made for studying workflow between zbrush, maya and substance painter. Mabel is a character from the cartoon called Gravity Falls.",
+    "category":["portfolio"],
+    "face":"assets/inteira.png",
+    "tags":["3d", "lookdev", "modeling"],
     "post":[
         {"imgPath":"assets/mabel/detalhe_pe.png",
-        "description":"Model detail"
+        "description":""
         },
+        {"imgPath":"assets/mabel/detalhe_camisa.png",
+            "description":""
+            },
+        {"gallery":[
+            {"imgPath":"assets/mabel/key_light.png",
+            "description":"Key light"},
+            {"imgPath":"assets/mabel/fill_light.png",
+            "description":"Fill light"},
+            {"imgPath":"assets/mabel/rim_light.png",
+                "description":"Rim light"}
+        ],
+        "description":"",
+        "columns":"3"
+        },
+        {"imgPath":"assets/mabel/rim_fill_key_background.png",
+            "description":"Light Composition ( Key + Fill + Rim )"
+            },
         {"gallery":[
             {"imgPath":"assets/mabel/ambient_light.png",
             "description":"Ambient light"},
             {"imgPath":"assets/mabel/ao.png",
-            "description":"Ambient occlusion"},
-            {"imgPath":"assets/mabel/fill_light.png",
-            "description":"Fill light"},
-            {"imgPath":"assets/mabel/key_fill_light.png",
-            "description":"Key fill light"},
-            {"imgPath":"assets/mabel/rim_light.png",
-            "description":"Rim light"},
-            {"imgPath":"assets/mabel/rim_light.png",
-                "description":"Isla, Te amo"}
+            "description":"Ambient occlusion"}
         ],
-        "description":"Light Components"
+        "description":"",
+        "columns":"3"
         },
-        {"imgPath":"assets/mabel/detalhe_pe.png",
-            "description":"Model detail"
+        {"imgPath":"assets/mabel/mabel_inteira.png",
+            "description":"Final Render (Previous composition + Ambient lights)"
             }
     ]
 }

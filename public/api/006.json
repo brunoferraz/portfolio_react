@@ -1,0 +1,26 @@
+{
+    "id": "006",
+    "name": "Portrait study",
+    "year": 2021,
+    "description":"Study of digital painting by timing it.",
+    "category":["study"],
+    "face":"assets/facetest_girl/Facetest_02_steps_180min.jpg",
+    "tags":["study", "digital", "painting"],
+    "post":[
+        {"gallery":[
+            {"imgPath":"assets/facetest_girl/Facetest_02_steps_10min.jpg",
+            "description":"10 min"},
+            {"imgPath":"assets/facetest_girl/Facetest_02_steps_30min.jpg",
+            "description":"30 min"},
+            {"imgPath":"assets/facetest_girl/Facetest_02_steps_60min.jpg",
+            "description":"60 min"},
+            {"imgPath":"assets/facetest_girl/Facetest_02_steps_90min.jpg",
+            "description":"90 min"},
+            {"imgPath":"assets/facetest_girl/Facetest_02_steps_120min.jpg",
+            "description":"120 min"},
+            {"imgPath":"assets/facetest_girl/Facetest_02_steps_180min.jpg",
+            "description":"180 min"}
+            
+        ]}
+    ]
+}
