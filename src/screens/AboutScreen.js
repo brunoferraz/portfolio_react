@@ -7,7 +7,6 @@ const AboutScreen = (props) =>{
         <Fragment>
             <Navbar screenQuery={props.screenQuery}/>
             <About screenQuery={props.screenQuery}/>
-
         </Fragment>
     )
 }
