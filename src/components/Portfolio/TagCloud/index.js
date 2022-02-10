@@ -109,7 +109,6 @@ const TagCloud = (props) => {
 
     return(
         <Fragment>
-            
             <div className="tagcloud_container">
             {tagsList.map((tag, index) =>
                 <Tag key={index} onAddTag={onAddTag} onRemoveTag={onRemoveTag} name={tag}/>
