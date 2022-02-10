@@ -11,7 +11,7 @@ import { currentProjectAtom } from "../../../atoms/currentProject.js";
 
 
 async function getProject(projid){
-    let response = await fetch(`./../api/${projid}.json`);
+    let response = await fetch(`./../api/projects/${projid}.json`);
     let data = await response.json();
     return data;
 }
