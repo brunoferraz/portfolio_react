@@ -8,6 +8,15 @@ import { projectsMappedbyTag } from './../../../atoms/projectsMappedByTag';
 import { projectsState } from "../../../atoms/projectsStates";
 import { enebledTags } from "../../../atoms/enebledTags";
 
+async function getfromFile(file){
+    let response = await fetch(file);
+    let data = await response.json();
+    return data;
+}
+async function getProjectsMappedByTag(){
+    return getfromFile("./../api/mappedByTags.json");
+}
+
 const TagCloud = (props) => {
     const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
     const [tagsList, setAllTagsList] = useRecoilState(alltagsList);
@@ -106,6 +115,11 @@ const TagCloud = (props) => {
             getProjectsStates();
         }
     },[activeTags])
+    useEffect(()=>{
+        // if((activeTags.length!==0)&&(mappedByTag.length!==0)){
+        //     getProjectsStates();
+        // }
+    },[])
 
     return(
         <Fragment>

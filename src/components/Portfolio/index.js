@@ -9,12 +9,19 @@ import { projectsState } from './../../atoms/projectsStates';
 import { currentProjectAtom } from "../../atoms/currentProject";
 
 
-async function getPortfolio(){
-    // let response = await fetch("http://localhost:3000/api/mock-projects.json");
-    let response = await fetch("./../api/mock-projects.json");
+async function getfromFile(file){
+    let response = await fetch(file);
     let data = await response.json();
     return data;
 }
+async function getProjectsMappedByTag(){
+    return getfromFile("./../api/mappedByTags.json");
+}
+
+async function getPortfolio(){
+    return getfromFile("./../api/mock-projects.json");
+}
+
 
 const Portfolio = (props) =>{
     // const [portfoliodata, setPortfolioData] = useState([]);
