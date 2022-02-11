@@ -13,47 +13,21 @@ async function getfromFile(file){
     let data = await response.json();
     return data;
 }
+async function getTags(){
+    return getfromFile("./../api/tags.json");
+}
 async function getProjectsMappedByTag(){
     return getfromFile("./../api/mappedByTags.json");
 }
 
 const TagCloud = (props) => {
-    const [portfoliodata, setPortfolioData] = useRecoilState(projectList);
     const [tagsList, setAllTagsList] = useRecoilState(alltagsList);
     const [mappedByTag, setMappedByTag] = useRecoilState(projectsMappedbyTag);
     const [projectsStatesList, setProjectsStates] = useRecoilState(projectsState);
-    const [activeTags, setEnabledTags] = useRecoilState(enebledTags);
-    // let activeTags = [];
+    const [enabledTags, setEnabledTags] = useRecoilState(enebledTags);
 
-
-;
-    const getAlltags= ()=>{
-        let tagsNoRepeat = [];
-        portfoliodata.forEach(proj => {
-            proj.tags.forEach(tag =>{
-                if(tagsNoRepeat.indexOf(tag)===-1){
-                    tagsNoRepeat.push(tag);
-                };
-            })
-        });
-        setAllTagsList([...tagsNoRepeat]);
-        setEnabledTags([...tagsNoRepeat]);
-        return tagsNoRepeat;
-    }
-    const mapProjectsByTag = () => {
-        let mapprojects = {}
-        tagsList.forEach(tag =>{
-            mapprojects[tag] = []
-            portfoliodata.forEach(proj => {
-                if(proj.tags.indexOf(tag) !== -1){
-                    mapprojects[tag].push([Number(proj.id), proj.name])
-                }
-            })
-        })
-        setMappedByTag(mapprojects)
-    }
     const onAddTag = (name) =>{
-        let local = [...activeTags];
+        let local = [...enabledTags];
         if(local.length === tagsList.length){
             local = []
             local.push(name);
@@ -63,7 +37,7 @@ const TagCloud = (props) => {
         setEnabledTags([...local])
     }
     const onRemoveTag = (name) =>{
-        let local = [...activeTags];
+        let local = [...enabledTags];
         if(local.length>0){
             let index = local.indexOf(name);
             local.splice(index, 1);
@@ -72,8 +46,6 @@ const TagCloud = (props) => {
             local = [...tagsList];
         }
         setEnabledTags([...local])
-        // activeTags = [...local]
-        // getProjectsOn()
     }
 
     const getProjectsStates = ()=>{
@@ -81,44 +53,34 @@ const TagCloud = (props) => {
         for(let i=0; i< props.projects.length; i++){
             projectsEnable.push(" disable");
         }
-        // console.log(activeTags)
-        activeTags.forEach(tag=>{
-            mappedByTag[tag].forEach(proj=>{
-                let id = proj[0]
-                projectsEnable[id] = " enable"
+        enabledTags.forEach(tag=>{
+            mappedByTag[tag].forEach(id=>{
+                projectsEnable[Number(id)] = " enable"
             })
         })
         setProjectsStates([...projectsEnable])
     }
 
     useEffect(()=>{
-        if(portfoliodata.length !== 0){
-            getAlltags();
-            // taglist     = [...getAlltags()];
-            // activeTags  = [...taglist];
-        }
-    },[portfoliodata])
-
-    useEffect(()=>{
-        if(tagsList.length!==0){
-            mapProjectsByTag();
-        }
-    },[tagsList])
-
-    useEffect(()=>{
-        if(mappedByTag.length!==0){
             getProjectsStates();
-        }
     },[mappedByTag])
     useEffect(()=>{
-        if((activeTags.length!==0)&&(mappedByTag.length!==0)){
+        if((enabledTags.length!==0)&&(mappedByTag.length!==0)){
             getProjectsStates();
         }
-    },[activeTags])
-    useEffect(()=>{
-        // if((activeTags.length!==0)&&(mappedByTag.length!==0)){
-        //     getProjectsStates();
-        // }
+    },[enabledTags])
+    useEffect(() =>{
+        //on load this component
+        //get tags from the preprocessed file
+        getTags().then((data)=>{
+            setAllTagsList([...data])
+            setEnabledTags([...data])
+        })
+        //get hash by tag from the preprocessed file
+        getProjectsMappedByTag().then((data)=>{
+            setMappedByTag(data)
+            getProjectsStates();
+        })
     },[])
 
     return(
