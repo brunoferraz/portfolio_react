@@ -6,7 +6,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { projectList } from "./../../../atoms/projectList.js";
 import { projectsMappedbyTag } from './../../../atoms/projectsMappedByTag';
 import { projectsState } from "../../../atoms/projectsStates";
-import { enebledTags } from "../../../atoms/enebledTags";
+import { enabledTagsAtom } from "../../../atoms/enabledTagsAtom";
 
 async function getfromFile(file){
     let response = await fetch(file);
@@ -16,15 +16,10 @@ async function getfromFile(file){
 async function getTags(){
     return getfromFile("./../api/tags.json");
 }
-async function getProjectsMappedByTag(){
-    return getfromFile("./../api/mappedByTags.json");
-}
 
 const TagCloud = (props) => {
     const [tagsList, setAllTagsList] = useRecoilState(alltagsList);
-    const [mappedByTag, setMappedByTag] = useRecoilState(projectsMappedbyTag);
-    const [projectsStatesList, setProjectsStates] = useRecoilState(projectsState);
-    const [enabledTags, setEnabledTags] = useRecoilState(enebledTags);
+    const [enabledTags, setEnabledTags] = useRecoilState(enabledTagsAtom);
 
     const onAddTag = (name) =>{
         let local = [...enabledTags];
@@ -48,27 +43,6 @@ const TagCloud = (props) => {
         setEnabledTags([...local])
     }
 
-    const getProjectsStates = ()=>{
-        let projectsEnable = []
-        for(let i=0; i< props.projects.length; i++){
-            projectsEnable.push(" disable");
-        }
-        enabledTags.forEach(tag=>{
-            mappedByTag[tag].forEach(id=>{
-                projectsEnable[Number(id)] = " enable"
-            })
-        })
-        setProjectsStates([...projectsEnable])
-    }
-
-    useEffect(()=>{
-            getProjectsStates();
-    },[mappedByTag])
-    useEffect(()=>{
-        if((enabledTags.length!==0)&&(mappedByTag.length!==0)){
-            getProjectsStates();
-        }
-    },[enabledTags])
     useEffect(() =>{
         //on load this component
         //get tags from the preprocessed file
@@ -77,10 +51,6 @@ const TagCloud = (props) => {
             setEnabledTags([...data])
         })
         //get hash by tag from the preprocessed file
-        getProjectsMappedByTag().then((data)=>{
-            setMappedByTag(data)
-            getProjectsStates();
-        })
     },[])
 
     return(
