@@ -1,11 +1,18 @@
 import React, { Fragment } from "react";
 import GoBackButton from "../shared/GoBackButton";
 import ScrollToTop from "../shared/ScrollToTop";
-import './style.scss'
+import './style.scss';
+import { useSpring, animated } from 'react-spring';
+
 const About = (props)=>{
+    const styles = useSpring({  
+        to:{opacity: 1 },
+        from: { opacity: 0}
+    })
+    
     return(
         <Fragment>
-            <div className={"about_container"+props.screenQuery}>
+            <animated.div style={styles} className={"about_container"+props.screenQuery}>
                 <div className={"about"+props.screenQuery}>
                 <div className="about_title">About</div>
                 <p>I am currently pursuing my Ph.D. at PUC-RJ in Computer Science in the Computer Graphics research line. I attained a Master's degree in Systems Engineering and Computing / Computer Graphics - PESC/ COPPE/ UFRJ (2017). Graduated in Industrial Design - Visual Programming from the Federal University of Rio de Janeiro (2007). I was a substitute Professor at ECO/ UFRJ. I have experience in Design with an emphasis on visual programming and multimedia. </p>
@@ -109,7 +116,7 @@ const About = (props)=>{
                 </div>
                 </div>
                 <GoBackButton/>
-            </div>
+            </animated.div>
             <ScrollToTop/>
         </Fragment>
     )

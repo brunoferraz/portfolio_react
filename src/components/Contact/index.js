@@ -9,11 +9,16 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import GoBackButton from "../shared/GoBackButton";
+import { useSpring, animated } from 'react-spring';
 
 const Contact = (props)=>{
+    const styles = useSpring({  
+        to:{opacity: 1 },
+        from: { opacity: 0}
+    })
     return(
         <Fragment>
-            <div className={"contact_container"+props.screenQuery}>
+            <animated.div style={styles} className={"contact_container"+props.screenQuery}>
                 <div className={"contact"+props.screenQuery}>
                     <div className="contact_title">Contact</div>
                     <ul className="contact_box">
@@ -50,7 +55,7 @@ const Contact = (props)=>{
                     </ul>
                 </div>
                 <GoBackButton/>
-            </div>
+            </animated.div>
         </Fragment>
     )
 }

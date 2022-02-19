@@ -9,6 +9,7 @@ import { projectsState } from './../../atoms/projectsStates';
 import { currentProjectAtom } from "../../atoms/currentProject";
 import { enabledTagsAtom } from "./../../atoms/enabledTagsAtom";
 import { projectsMappedbyTag } from "../../atoms/projectsMappedByTag";
+import { useSpring, animated } from 'react-spring'
 
 async function getfromFile(file){
     let response = await fetch(file);
@@ -31,7 +32,10 @@ const Portfolio = (props) =>{
     const [currentProject, setCurrentProject] = useRecoilState(currentProjectAtom);
     const [mappedByTag, setMappedByTag] = useRecoilState(projectsMappedbyTag);
     const [enabledTags] = useRecoilState(enabledTagsAtom);
-
+    const styles = useSpring({  
+        to:{opacity: 1 },
+        from: { opacity: 0}
+    })
     
     useEffect(()=>{
         //On enabled TAGS changes, gets projects states
@@ -110,7 +114,7 @@ const Portfolio = (props) =>{
     return(
         <Fragment>
             {
-                <div className={"portfolio"+props.screenQuery}>
+                <animated.div style={styles} className={"portfolio"+props.screenQuery}>
                     <h1 className="title_portfolio">Portfolio</h1>
                     <TagCloud projects= {portfoliodata} ></TagCloud>
                     <div className={"gallery"+props.screenQuery}>
@@ -119,7 +123,7 @@ const Portfolio = (props) =>{
                             // renderOrder_linear()
                         }
                     </div>
-                </div>
+                </animated.div>
             }
         </Fragment>
     )

@@ -8,7 +8,7 @@ import PostComponent from "./PostComponent/index.js";
 import Description from "./shared/Description/index.js";
 import GoBackButton from "../../shared/GoBackButton/index.js";
 import { currentProjectAtom } from "../../../atoms/currentProject.js";
-
+import { useSpring, animated } from 'react-spring';
 
 async function getProject(projid){
     let response = await fetch(`./../api/projects/${projid}.json`);
@@ -22,7 +22,10 @@ const ProjectDetail = (props)=>{
     const [tags, getTags] = useState([]);
     let { id } = useParams();
     let history = useHistory();
-
+    const styles = useSpring({  
+        to:{opacity: 1 },
+        from: { opacity: 0}
+    })
     useEffect(() =>{
         getProject(id).then((data)=>{
             // console.log(data.tags)
@@ -44,7 +47,7 @@ const ProjectDetail = (props)=>{
     return(
         <Fragment>
             {
-            <div className={"project_container"+props.screenQuery}>
+            <animated.div style={styles} className={"project_container"+props.screenQuery}>
                 <img src={path+currentProject.face} alt="" className="project_face" />
                 <div className="title_project">{currentProject.name} <span> | {currentProject.year}</span></div>
                 <div className={"project_tagCloud"+props.screenQuery}>
@@ -55,7 +58,7 @@ const ProjectDetail = (props)=>{
                 <Description className="project_description" str={currentProject.description} />
                 {!currentProject.post?null:<PostComponent id={id} screenQuery={props.screenQuery} />}
                 <GoBackButton></GoBackButton>
-            </div>
+            </animated.div>
             }
         </Fragment>
     )

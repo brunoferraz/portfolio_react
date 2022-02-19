@@ -15,9 +15,9 @@
             {"imgPath":"assets/landscape_study/landscape_90min.jpg",
             "description":"90 min"},
             {"imgPath":"assets/landscape_study/landscape_150min.jpg",
-            "description":"150 min"},
+            "description":"120 min"},
             {"imgPath":"assets/landscape_study/landscape_210min.jpg",
-            "description":"120 min"}
+            "description":"150 min"}
         ]}
     ]
 }
