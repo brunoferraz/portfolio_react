@@ -1,0 +1,17 @@
+{
+    "id": "010",
+    "name": "Real Time Color Projection",
+    "year": 2021,
+    "description":"This is my MSc project",
+    "category":["dev"],
+    "face":"assets/color_projection/urnaHigh_03_weight.png",
+    "tags":["dev", "real time", "rendering", "glsl", "c++"],
+    "post":[
+        {"gallery":[
+            {"imgPath":"assets/color_projection/urnaHigh_03_weight.png",
+            "description":""},
+            {"imgPath":"assets/color_projection/urnaHigh_03_mapping.png",
+            "description":""}
+        ]}
+    ]
+}

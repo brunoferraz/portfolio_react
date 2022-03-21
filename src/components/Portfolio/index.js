@@ -21,7 +21,8 @@ async function getProjectsMappedByTag(){
 }
 
 async function getPortfolio(){
-    return getfromFile("./../api/mock-projects.json");
+    // return getfromFile("./../api/mock-projects.json");
+    return getfromFile("./../api/cleanedProjectList.json");
 }
 
 
