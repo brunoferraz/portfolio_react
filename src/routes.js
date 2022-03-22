@@ -21,6 +21,9 @@ const Routes = (props)=>{
                 <Route exact path='/portfolio'>
                     <PortfolioScreen screenQuery={props.screenQuery} />
                 </Route>
+                {/* <Route exact path='/portfolio/:type'>
+                    <PortfolioScreen screenQuery={props.screenQuery} />
+                </Route> */}
                 <Route exact path='/contact'>
                     <ContactScreen  screenQuery={props.screenQuery} />
                 </Route>

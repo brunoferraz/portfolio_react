@@ -62,9 +62,12 @@ for (const [id, proj] of Object.entries(projectList)) {
     devProjectsList["projects"].push(temp)
   }
 }
-console.log(devProjectsList)
+
 
 //WRITE FILES
 fs.writeFileSync('./public/api/tags.json',JSON.stringify(noRepeatTags, null), "utf-8")
 fs.writeFileSync('./public/api/mappedByTags.json',JSON.stringify(projectsTags, null), "utf-8")
+
 fs.writeFileSync('./public/api/cleanedProjectList.json',JSON.stringify(cleanedProjectList, null, 4), "utf-8")
+fs.writeFileSync('./public/api/devProjectsList.json',JSON.stringify(devProjectsList, null, 4), "utf-8")
+fs.writeFileSync('./public/api/artProjectsList.json',JSON.stringify(artProjectsList, null, 4), "utf-8")

@@ -10,6 +10,8 @@ import { currentProjectAtom } from "../../atoms/currentProject";
 import { enabledTagsAtom } from "./../../atoms/enabledTagsAtom";
 import { projectsMappedbyTag } from "../../atoms/projectsMappedByTag";
 import { useSpring, animated } from 'react-spring'
+import { useParams } from "react-router-dom";
+
 
 async function getfromFile(file){
     let response = await fetch(file);
@@ -20,9 +22,15 @@ async function getProjectsMappedByTag(){
     return getfromFile("./../api/mappedByTags.json");
 }
 
-async function getPortfolio(){
-    // return getfromFile("./../api/mock-projects.json");
-    return getfromFile("./../api/cleanedProjectList.json");
+async function getPortfolio(foliotype){
+    console.log(foliotype)
+    let path = "./../api/cleanedProjectList.json";
+    // if(foliotype === "dev"){
+    //     path = "./../api/devProjectsList.json";
+    // }else if(foliotype==="art"){
+    //     path = "./../api/artProjectsList.json";
+    // }
+    return getfromFile(path);
 }
 
 
@@ -33,6 +41,7 @@ const Portfolio = (props) =>{
     const [currentProject, setCurrentProject] = useRecoilState(currentProjectAtom);
     const [mappedByTag, setMappedByTag] = useRecoilState(projectsMappedbyTag);
     const [enabledTags] = useRecoilState(enabledTagsAtom);
+    let { type } = useParams();
     const styles = useSpring({  
         to:{opacity: 1 },
         from: { opacity: 0}
@@ -60,7 +69,7 @@ const Portfolio = (props) =>{
         getProjectsMappedByTag().then((data)=>{
             setMappedByTag(data)
         })
-        getPortfolio().then((data)=>{
+        getPortfolio(type).then((data)=>{
             //onload site
             //load projects info
             setPortfolioData(data["projects"]);
@@ -79,7 +88,7 @@ const Portfolio = (props) =>{
             console.log(myList);
         })
         
-    },[])
+    },[type])
 
     const shuffle = (array_parameter) => {
         //TODO pass to a UTIL class

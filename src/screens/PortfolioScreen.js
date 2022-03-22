@@ -1,12 +1,13 @@
 import React, {Fragment} from "react";
 import Navbar from "../components/Navbar";
+import NavbarComplete from "../components/NavbarComplete";
 import Portfolio from "../components/Portfolio";
 
 const PortfolioScreen = (props) =>{
     // console.log(props)
     return(
         <Fragment>
-            <Navbar screenQuery={props.screenQuery}/>
+            <NavbarComplete screenQuery={props.screenQuery}/>
             <Portfolio screenQuery={props.screenQuery}/>
         </Fragment>
     )

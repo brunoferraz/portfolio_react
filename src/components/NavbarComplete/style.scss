@@ -1,0 +1,181 @@
+@import './../../variables/variables.scss';
+
+.header_Container{
+    position: relative;
+    width: $headerNav_width;
+    height: 100%;
+    background-color: $primary;
+}
+.header{
+    position: fixed;
+    width: $headerNav_width;
+    background-color: $primary;
+    height: 100vh;
+    display: flex;
+    flex-flow: column ;
+    justify-content: flex-start;
+    align-items: center;
+}
+.brand{
+    margin-top: 10%;
+}
+.title{
+    margin-top: 15%;
+    align-self: center;
+    color: #{$baseline_on_primary};
+    font-size: 2em;
+}
+.title a{
+    color: #{$baseline_on_primary};
+}
+
+.navBar{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+.navBar a{
+    font-size: 1em;
+    padding: 10px 0px 10px 50px;
+    padding-left: 50px;
+    text-decoration: none;
+    display: block;
+    color: #{$primary_dark};
+}
+.navBar a:hover{
+    background-color:#{$secondary};
+    color: #{$baseline_on_secondary};
+}
+.subtopic{
+    padding-left: 70px !important;
+}
+.socialNetworkBar{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    margin-bottom: 15%;
+}
+.socialNetworkBar a{
+
+    color: #{$baseline_on_primary};
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.socialNetworkBar a:hover{
+    border-radius: 15px;
+    background-color:#{$secondary};
+    color: #{$baseline_on_secondary};
+}
+
+////////////////////////////////////////////////////////////
+// MOBILE
+////////////////////////////////////////////////////////////
+.header_Container.mobile{
+    width: 100%;
+    height: $headerNav_folded_height;
+}
+.header_Container.mobile.barUnfolded{
+    height: $headerNav_unfolded_height;
+}
+.header.mobile.barFolded{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: $headerNav_folded_height;
+}
+.header.mobile.barUnfolded{
+    display: block;
+}
+.burguermenu{
+    cursor: pointer;
+    display: flex;
+    width: 30px;
+    height: 20px;
+    margin-top: 20px;
+    margin-right: 15px;
+    float: right;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.burguermenu div{
+    width: 100%;
+    height: 20%;
+    border-radius: 15px;
+    background-color: #{$baseline_on_primary};
+}
+@media(hover: hover) and (pointer: fine){
+    .burguermenu:hover{
+        cursor: pointer;
+    }
+    .burguermenu:hover div{
+        background-color: #{$secondary};
+    }
+}
+.brand.mobile{
+    display: none;
+}
+.title.mobile{
+    float: left;
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 1.2em;
+}
+.navBar.mobile{
+    display: none;
+}
+.navBar.mobile a{
+    padding-left: 0;
+    text-align: left;
+    padding: 20px 0px 20px 0px;
+}
+.navBar.mobile.barUnfolded a{
+    padding-left: calc(50% - 60px);
+}
+.navBar.mobile.barUnfolded .subtopic{
+    // padding-left: 0px !important;
+    padding-left: calc(50% - 40px) !important;
+}
+.navBar.mobile.barUnfolded{
+    display: block;
+    position: relative;
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: auto;
+}
+
+.socialNetworkBar.mobile{
+    position:absolute;
+    bottom: 15px;
+    margin: auto;
+    // transition:0.1s;
+    left: calc(50% - 50px);
+}
+.socialNetworkBar.mobile.barUnfolded{
+    bottom: -160px;
+    left: calc(50% - 80px);
+}
+.socialNetworkBar.mobile.twoColumn{
+    transition:0.3s;
+    left: calc(50% - 80px);
+}
+.socialNetworkBar.mobile.threeColumn{
+    // left: calc(50% - 80px);
+}
+.barUnfolded{
+    transition: height 0.1s;
+}
+.header.mobile.barFolded{
+    // transition: 0.0s;
+}
+.header.mobile.barUnfolded{
+    width: 100%;
+    height: 220px;
+}
