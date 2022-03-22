@@ -3,7 +3,7 @@
     "name": "Mabel",
     "year": 2021,
     "description":"Made for studying workflow between zbrush, maya and substance painter. Mabel is a character from the cartoon called Gravity Falls.",
-    "category":["portfolio"],
+    "category":["portfolio", "art"],
     "face":"assets/inteira.png",
     "tags":["3d", "lookdev", "modeling"],
     "post":[

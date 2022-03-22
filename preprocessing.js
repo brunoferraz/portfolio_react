@@ -14,6 +14,10 @@ let noRepeatTags = [];
 let cleanedProjectList = {};
 cleanedProjectList["projects"] = [];
 
+let artProjectsList = {};
+artProjectsList["projects"] = [];
+let devProjectsList = {};
+devProjectsList["projects"] = [];
 
 
 //get all JSON files inside the folder
@@ -38,6 +42,8 @@ for (const [key, value] of Object.entries(projectsTags)) {
     }
   }
 }
+
+//GET ALL PROJECTS LIST
 for (const [id, proj] of Object.entries(projectList)) {
   let temp = {}
   temp["id"] = proj["id"]
@@ -48,9 +54,17 @@ for (const [id, proj] of Object.entries(projectList)) {
   temp["face"] = proj["face"]
   temp["tags"] = proj["tags"]
   cleanedProjectList["projects"].push(temp)
+  if(proj["category"].indexOf("art")!==-1){
+    artProjectsList["projects"].push(temp)
+  }
+  
+  if(proj["category"].indexOf("dev")!==-1){
+    devProjectsList["projects"].push(temp)
+  }
 }
+console.log(devProjectsList)
 
-
+//WRITE FILES
 fs.writeFileSync('./public/api/tags.json',JSON.stringify(noRepeatTags, null), "utf-8")
 fs.writeFileSync('./public/api/mappedByTags.json',JSON.stringify(projectsTags, null), "utf-8")
 fs.writeFileSync('./public/api/cleanedProjectList.json',JSON.stringify(cleanedProjectList, null, 4), "utf-8")

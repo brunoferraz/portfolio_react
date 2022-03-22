@@ -3,7 +3,7 @@
     "name": "Portrait study",
     "year": 2021,
     "description":"Study of digital painting by timing it.",
-    "category":["study"],
+    "category":["study", "art"],
     "face":"assets/facetest_girl/Facetest_02_steps_180min.jpg",
     "tags":["study", "digital", "painting"],
     "post":[

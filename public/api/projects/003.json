@@ -3,7 +3,7 @@
     "name": "Tea Time",
     "year": 2021,
     "description":"Digital watercolor exercise",
-    "category":["portfolio"],
+    "category":["portfolio", "art"],
     "face":"assets/tea_time/tea_time.png",
     "tags":["digital", "watercolor", "illustration"]
 }

@@ -3,7 +3,7 @@
     "name": "Real Time Color Projection",
     "year": 2021,
     "description":"This is my MSc project",
-    "category":["dev"],
+    "category":["dev", "portfolio"],
     "face":"assets/color_projection/urnaHigh_03_weight.png",
     "tags":["dev", "real time", "rendering", "glsl", "c++"],
     "post":[
